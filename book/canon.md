@@ -64,7 +64,7 @@ The "resistance military" — distinct from the other factions. Democratic/popul
 - Weapons: **glowing cyan energy spear** (signature; throwable, returns via magnetic tether — the "spear throw" is iconic), **energy rifle** (side-slung). Combat role: tactical / heavy breacher and scout; versatile.
 - Quote: "We will tear down their towers brick by brick until Mali is whole again."
 ### Awa — protagonist
-- Age ~27. Khalil's cousin (Dr. Amadou is her uncle — her mother's brother). Darker skin than Khalil, slim, agile silhouette (gothic-hunter elegance). **Short braids** (shoulder length or shorter). Facial markings.
+- Age ~27. Khalil's cousin (Dr. Amadou is her uncle — her mother's brother). Darker skin than Khalil, slim, agile silhouette (gothic-hunter elegance). **Short dreadlocks (locs)**, shoulder length or shorter. Facial markings.
 - Wears armor patterned in **Bogolanfini (mud cloth)** — black and bronze/brown geometric patterns over sleek cybernetic armor plates; mechanical arm augments. **Red-glowing energy sword** (machete-like blade). **Backpack rifle / gear pack** worn LOW on the back with a **plain, blank finish** (no Bogolan on the gear).
 - Role: stealth, recon, tech-shaman. She "weaves" Bogolan runes through her gauntlet: rune patterns that hack energy spires, raise defense barriers, disrupt cloaks, tag targets with micro-drones. Precision anti-materiel sniping with the backpack rifle.
 - Nickname: "Ghost of the Sahel". Quote: "The Syndicate built walls to hide their fear. We move through them like wind."
@@ -72,7 +72,7 @@ The "resistance military" — distinct from the other factions. Democratic/popul
 - A man around thirty, a highly trained hacker and cyber-architect who has fought from the digital shadows for years to dismantle the dystopia and restore full democracy. **Pronouns: he/him.** His real name is never given.
 - **Revealed late:** for most of the game he exists only as a voice, a violet relay glyph and remote hands on the city's systems. The player first sees his face in his Interlude II questline ("The Access Key"), when he chooses to meet the cousins in person.
 - Look (portrait reference): short-cropped hair, athletic build, geometric tribal tattoos on the upper arms, a sleeveless vest with indigo/red/green woven geometric patterns, olive cargo trousers, worn combat boots; carries a translucent data tablet and a compact sidearm. Violet UI motif on his screens.
-- Skills: remote turret subversion, neural override pulses, environmental grid hacks.
+- Skills: remote turret subversion, neural override pulses, environmental grid hacks. From Interlude II he is a **full third playable hero** (see §9.2); in the field he adds a collapsible **shock baton** for close quarters.
 - Quote: "Power belongs to the citizens. I am merely rewriting the access key."
 ### Dr. Amadou — the missing father
 - Look (portrait reference): elderly, white close-cropped beard, round glasses, embroidered indigo kufi cap, a long green boubou with geometric embroidery, sturdy boots; carries a leather-bound book and a brass magnifier.
@@ -118,7 +118,7 @@ Amadou disappears. Khalil and Awa find his empty vault, the bypass keys, and the
   1. **Reunification** — Timbuktu rejoins Mali; elections announced; Tenzar autonomy negotiated.
   2. **The Fragile Accord** — city free but divided; reunification pending.
   3. **The Iron Peace** — Syndicate broken but KRF rules by force; Khalil/Awa question what they became. An EQUAL ending with its own full epilogue, not a penalty screen.
-  4. **The Silent Wind** (fail state) — the Core is lost; the resistance scatters. Amadou escapes with the scattered KRF into the desert and becomes keeper of the next attempt.
+  4. **The Silent Wind** (fail state) — the Core is lost; the resistance scatters. The rescue fails: Amadou remains Vey's prisoner in the Azure Citadel (sequel hook).
 
 ## 7. Game systems (canon terms)
 - **Echo Layer / Echo Sight**: environmental hacking overlays historical datastreams on the modern ruins (holographic reconstructions of historic libraries, scholars, markets). Puzzles and lore. Central to cultural identity.
@@ -127,29 +127,29 @@ Amadou disappears. Khalil and Awa find his empty vault, the bypass keys, and the
 - **Combat**: heavy recoil, armor deformation, destructible banco and concrete cover, electrical conduits that spark/detonate, metal doors that buckle under breaching.
 - **Team combos**: e.g., Dusé hijacks a turret + Awa vent shot + Khalil breach.
 - **Reputation / Accord meter**: standing with KRF, populace, MLI-Z, Griot Circle, Azalai, Ferrymen, Lantern Children, Unveiled.
-- Character swap between Khalil and Awa in the open world; Dusé as remote support, plus short playable in-person sequences after Interlude II (see §9).
+- Character swap between Khalil and Awa in the open world; Dusé is remote support in Act II and joins the swap as a full third hero from Interlude II onward (see §9.2).
 - Open-world traversal: on foot, **sand-skiffs** (hover sleds), Azalai caravans, river pirogues.
 
 ## 7b. Ascension (powered-up forms)
 - Concept art shows figures with glowing eyes holding orbs of light: these are **Ascension** forms, powered-up states of the playable characters, not separate characters.
 - Source: **Echo Seeds**, orbs of condensed historical datastream. The first fragment is found in the Bubble (Act I) and gives a brief, unstable taste; full Ascension unlocks after the Kirina Core is recovered at Kirina Deep (Act III).
 - Built by **Resonance** (earned through Echo hacks, team combos and protecting civilians). When Ascended, the eyes glow amber and an Echo orb forms in the palm; abilities are amplified for a short window.
-- Forms: Khalil — *Wind of Kirina*; Awa — *Mother of Runes*; Dusé — *Ghost Signal* (remote, city-wide). Exact abilities are defined in Part V.
+- Forms: Khalil — *Wind of Kirina*; Awa — *Mother of Runes*; Dusé — *Ghost Signal* (in person, reaching city-wide through relays). Exact abilities are defined in Part V.
 
 ## 8. Teaser
 - The teaser "The Winds Remember" (about 54 seconds) is described beat by beat in Part VII, Chapter 21. Video-generation prompts are kept out of this repository.
 - All on-screen and background text is Latin script only.
 
 ## 9. Settled decisions
-1. **Amadou in The Silent Wind:** he is freed during the Siege in every ending; in the Silent Wind he escapes with the scattered KRF into the Foggara and the desert, and keeps the Letter's cipher alive for "the next wind". He never dies on-screen.
-2. **Dusé is playable in short in-person sequences** after his Interlude II reveal: (a) the end of "The Access Key" (the Kabara roof and Cissé's annex), (b) "Ghost Run" during the Siege — Dusé alone on the Citadel relay floor while the cousins fight below, (c) optional "Relay Night" side missions. Kit: compact sidearm, data tablet, turret subversion, override pulse, grid hacks; fragile, no heavy weapons, no melee kills. Khalil and Awa remain the two main playable heroes; Dusé stays remote support in normal open-world play.
+1. **Amadou in The Silent Wind:** the rescue fails and he remains Vey's prisoner in the Azure Citadel, a sequel hook. The Syndicate still cannot make him unlock the Core's secrets. He is freed in the other three endings and never dies on-screen.
+2. **Dusé is a full third playable hero from Interlude II onward.** Act II: remote support only (voice, violet glyph, relay wheel). From "The Access Key" (his face reveal) through all of Act III he joins the swap with Khalil and Awa in the open world and in missions. Kit: compact sidearm, data tablet (turret subversion, override pulse, grid hacks), and a collapsible **shock baton** for close quarters (stuns and takedowns). Light armour, no heavy weapons; he plays as a controller. His Ascension, Ghost Signal, works in person (the eyes glow amber, the orb forms over his tablet) and reaches city-wide through captured relays. Three-way team combos become available.
 3. **Branch scope at launch:** the canonical path ships at full quality. Drawer, Alpha, Beta and the war with Tenzar ship as shorter variant missions that reuse spaces; all four endings ship at launch.
 4. **Ascension in the vertical slice:** the slice includes the unstable Act I taste once (scripted, about 20 seconds); full Ascension is held for Act III.
 5. **MLI-Z endgame if the player fights Tenzar:** Teyr is never killed by the player. After Tin-Zawar falls he sues for terms late, at a higher price (a sovereignty referendum clause, the eastern wells, the release of Ibbo ag Menna). Refusing sends him to the Erg, a sequel thread.
 6. **Sensitivity review:** a Malian cultural panel (historian, griot, Tamasheq and Songhai advisers, a Muslim scholar, a women's-rights advocate) reviews at both the vertical slice and before the first public reveal; it has binding say on cultural and religious depiction.
 7. **Royale monetisation:** cosmetic-only seasonal pass; no paid power; no sacred or family Bogolan motifs sold as skins (patterns are licensed from living artists who are paid).
-8. **Awa's hair:** short braids, locked for the model sheet.
-9. **Age rating:** target Mature/18 for combat intensity; atrocities against women and children are shown through aftermath and systems, never staged as playable or lingering violence.
+8. **Awa's hair:** short dreadlocks (locs), shoulder length or above, locked for the model sheet.
+9. **Age rating:** target PEGI 16 / USK 16 (ESRB M). Combat stays heavy and weighty in recoil, impact and destruction, but without dismemberment or lingering gore. All atrocities, especially against women and children, stay off-screen: shown only through aftermath, testimony and systems.
 10. **The Iron Peace:** equal ending with its own full epilogue and no gameplay penalty; its cost is moral, shown in who stays and who leaves.
 
 ## 10. Naming conventions (binding for new names)
