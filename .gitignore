@@ -1,0 +1,10 @@
+# Publish only the book. Drafts, media and source PDFs stay local.
+/*
+!/.gitignore
+!/README.md
+!/index.html
+!/.nojekyll
+!/book/
+!/tiira/
+!/assets/
+/book/WRITERS.md

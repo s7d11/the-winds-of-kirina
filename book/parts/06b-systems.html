@@ -1,0 +1,188 @@
+<section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="The Stealth System" data-chapter="Chapter 19 · Stealth">
+  <div class="ch-head"><span class="kicker">Chapter 19 · Systems</span><h2 class="ch-title">The Stealth System</h2>
+  <p class="lede">The Ghost of the Sahel does not hide from the city. She hides inside it.</p></div>
+  <p class="drop-cap">Stealth in <i>The Winds of Kirina</i> runs on two values every enemy keeps about the player: <b>sight</b> and <b>sound</b>. Each fills a hidden meter per enemy, and when either meter crosses a threshold the enemy changes state. The world is built to let you push those meters down. Banco walls swallow noise, Harmattan dust eats sightlines, and a crowd is the best cover in the city.</p>
+  <div class="grid-2">
+    <div class="card"><h4>Light</h4><p>Every surface samples the real light level. Shade under a toron beam, an unlit Foggara mouth or the gap between two market awnings counts as dark. J-Sector's cyan pipes and Faya's orange wall circuits are light sources: stand beside one and you glow. Awa can rune-short a circuit for 20 seconds; Khalil can shoot a lamp, which is quick and dark but makes noise.</p></div>
+    <div class="card"><h4>Sound</h4><p>Footsteps are graded by surface. Sand is quiet, gravel is loud, Syndicate deck plating rings. Sprinting triples the radius. Gunfire carries 80 m in the open, half that in the alley maze. Thrown hooks, tossed salt crystals and a tapped spear shaft are lures that pull a guard toward a chosen spot.</p></div>
+    <div class="card"><h4>Disguise: Faya plain garb</h4><p>Loot or buy the simplified wraps the Faya population is forced to wear and Khalil can walk the Spires openly. Wardens read gait as well as cloth: running, climbing, carrying a weapon in hand or standing near a dead body breaks the disguise. Spire Marksmen and drill officers look twice, so high-rank enemies see through it at half range.</p></div>
+    <div class="card"><h4>Crowds</h4><p>Markets, prayer-hour streets, ration queues and caravan stops hold blend crowds. Walk at their pace and you vanish from sight checks. Crowds react to violence, though: one takedown in the open and they scatter, leaving you exposed in an empty square.</p></div>
+  </div>
+  <h3>Awa's cloak</h3>
+  <p>Awa's gauntlet weaves a Bogolan veil over her armor that bends light for <b>8 seconds</b> (12 with the Ghost tree). It drains the shared Grid gauge, flickers when she takes damage, and fails outright near Dampener Wraith fields. Thermal sights on Syndicate drones and Grid Hounds still see her as a cool shape, so the cloak is strongest in Faya and weakest in the Generation Hall.</p>
+  <h3>The four alert stages</h3>
+  <div class="tablewrap"><table class="codex">
+    <tr><th>Stage</th><th>Trigger</th><th>Enemy behaviour</th><th>Way back</th></tr>
+    <tr><td><span class="tag green">Unaware</span></td><td>Default</td><td>Fixed patrols, idle chatter, routine radio checks every 90 s.</td><td>n/a</td></tr>
+    <tr><td><span class="tag">Suspicious</span></td><td>Partial meter, a missed radio check, an open door</td><td>One guard investigates the last known point; others slow down and look around.</td><td>Stay unseen for 30 s.</td></tr>
+    <tr><td><span class="tag cyan">Searching</span></td><td>Body found, a lure traced back, a glimpse of the player</td><td>Squads sweep in pairs, flares and drones go up, doors lock.</td><td>Break contact for 2 min; or Dust Devil combo.</td></tr>
+    <tr><td><span class="tag red">Engaged</span></td><td>Clear sighting, gunfire, alarm pulled</td><td>Reinforcements by faction; gunships in J-Sector.</td><td>Escape the zone or eliminate the alarm relay.</td></tr>
+  </table></div>
+  <div class="callout red"><span class="label">Risk &amp; consequence</span><p>Alert has memory. Each district that reaches Engaged stays at Suspicious for the rest of the in-game day, with doubled patrols. Bodies left in a Faya alley are found the next morning and the quarter is punished with a curfew that lowers populace Accord.</p></div>
+</section>
+
+<section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="Enemy Intelligence" data-chapter="Chapter 19 · Enemy AI">
+  <div class="ch-head"><span class="kicker">Chapter 19 · Systems</span><h2 class="ch-title">Enemy Intelligence</h2>
+  <p class="lede">Three factions, three ways of thinking, and every one of them is paying attention.</p></div>
+  <p>Enemy AI is built in two layers. The <b>squad brain</b> picks a plan for the group: hold, push, flank, fall back, call support. The <b>soldier brain</b> executes it with personal quirks: a nervous recruit fires early, a veteran waits for a reload. The factions share this frame but plan very differently, and the player should feel the difference within one encounter.</p>
+  <div class="grid-3">
+    <div class="card"><h4>Azure Syndicate: tactical AI</h4><p>Fire teams of four share one sensor picture through their drones. They suppress the player's last position, send two operators wide, and use turrets as anchors. They track ammunition and fall back in turn to reload. When a team lead dies, the team keeps fighting but stops coordinating flanks until a drone re-links them. Operators never chase into the Foggara; they seal it and wait.</p></div>
+    <div class="card"><h4>Wardens: formations</h4><p>Wardens move as a line under a drill officer. They advance in steps, kneel to fire volleys on command and close shields when hit. The line is strong head-on and slow to turn. Kill the officer and the line freezes for two seconds, then a sergeant takes over with a cruder plan. Lance Zealots break ranks when the Codified Word is broadcast from a nearby spire, which makes them brave and careless.</p></div>
+    <div class="card"><h4>MLI-Z: ambush tactics</h4><p>Raiders pick the ground before the fight. They park skiffs behind dune crests, lay harpoon crews on both sides of a wadi, and open fire only when the target is committed. If the fight turns, they scatter in several directions and regroup at a cache. They avoid fights they cannot win and will offer to talk if the player has standing with Tenzar.</p></div>
+  </div>
+  <h3>How enemies coordinate</h3>
+  <ul>
+    <li><b>Shared knowledge:</b> enemies only know what someone in their network has seen or heard. Kill the radio operator first and the next post never hears of you.</li>
+    <li><b>Callouts:</b> soldiers shout what they see in plain language ("Cloak on the roof!", "He's behind the dyer's wall!"). The player can hear the AI's picture of the fight and play against it.</li>
+    <li><b>Roles:</b> every squad fills slots (point, support, flanker, marksman). If a slot dies, another soldier is promoted into it, a little worse at the job.</li>
+  </ul>
+  <h3>How enemies learn</h3>
+  <p>Each faction keeps a <b>doctrine profile</b> that adapts to the player's habits across the campaign. Use the same trick too often and the faction answers it.</p>
+  <div class="tablewrap"><table class="codex">
+    <tr><th>Player habit</th><th>Syndicate answer</th><th>Warden answer</th><th>MLI-Z answer</th></tr>
+    <tr><td>Heavy spear-throw use</td><td>Magnetic chaff on armor</td><td>Shield bearers in front rank</td><td>Spread formations on dunes</td></tr>
+    <tr><td>Rooftop sniping</td><td>Counter-sniper drones</td><td>More Spire Marksmen at night</td><td>Smoke pots and moving skiffs</td></tr>
+    <tr><td>Cloaked infiltration</td><td>Thermal sweeps, Grid Hounds</td><td>Lanterns and dust-sifting patrols</td><td>Bells on camp tripwires</td></tr>
+    <tr><td>Dusé turret hijacks</td><td>Turrets with dead-man switches</td><td>(no turrets)</td><td>Turrets swapped for scrap gunners</td></tr>
+  </table></div>
+  <div class="callout cyan"><span class="label">Design note</span><p>Adaptation is capped and always signposted. An intercepted order or a griot rumour tells the player what changed. A counter never closes a tactic for good: it only makes the player mix approaches, which is where team combos come in.</p></div>
+</section>
+
+<section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="Crafting, Salvage and the Market" data-chapter="Chapter 19 · Crafting">
+  <div class="ch-head"><span class="kicker">Chapter 19 · Systems</span><h2 class="ch-title">Crafting, Salvage and the Market</h2>
+  <p class="lede">Nothing in a blockaded city is new. Everything is taken apart and made again.</p></div>
+  <p>Timbuktu has been cut off for forty years. The economy runs on salvage, barter and three currencies nobody fully trusts. The player gathers materials in the field, trades in markets controlled by different powers, and has upgrades built by artisans rescued from J-Sector's Metalwork District.</p>
+  <h3>Resources</h3>
+  <div class="tablewrap"><table class="codex">
+    <tr><th>Resource</th><th>Main source</th><th>Used for</th></tr>
+    <tr><td>Scrap alloy</td><td>Syndicate wrecks, Borderlands salvage yards</td><td>Weapon frames, armor plates</td></tr>
+    <tr><td>Grid cells</td><td>Generation Hall raids, drained Sun Steles</td><td>Energy weapons, gauntlet, spear head</td></tr>
+    <tr><td>Circuit thread</td><td>Weaving Cluster, Faya spire cabling</td><td>Rune patterns, cloak, HUD mods</td></tr>
+    <tr><td>Salt bars</td><td>Azalai trade, Taoudenni caches</td><td>Currency in the desert; sand-proof seals</td></tr>
+    <tr><td>Echo fragments</td><td>Echo Sight puzzles, manuscripts</td><td>Rare upgrades; Griot Circle trades</td></tr>
+  </table></div>
+  <h3>The economy</h3>
+  <p>J-Sector pays in <b>grid credit</b>, which buys power by the hour and loses value whenever the KRF damages the grid. The Azalai pay and accept <b>salt</b>, the only stable money in the region. Faya bans trade outside its ration boards, so its <b>Market of Silence</b> runs on whispered barter. Prices move with the war: after Operation Lantern, grid credit crashes and salt doubles.</p>
+  <h3>Upgrading the signature weapons</h3>
+  <div class="grid-2">
+    <div class="card"><h4>Kirina Spear</h4><p>Three tiers of head (Grid cells), tether coils for longer recall, and a hafted shaft of acacia over alloy. Final tier: <i>Twin Head</i>, which splits into two pins on impact.</p></div>
+    <div class="card"><h4>Energy Rifle</h4><p>Heat sinks, scope lenses and a barrel shroud. A Ferrymen-sourced "river cooler" lets it fire longer in daylight. Final tier: charged shot that pierces two targets.</p></div>
+    <div class="card"><h4>Red Blade</h4><p>Edge emitters raise armor cutting; a grip woven with circuit thread speeds the draw. Final tier: a thrown arc that returns along the rune line.</p></div>
+    <div class="card"><h4>Rune Gauntlet</h4><p>New Bogolan pattern slots, Grid capacity and cloak duration. Weavers in the Well must teach each pattern before it can be stitched in.</p></div>
+  </div>
+  <h3>Merchant factions</h3>
+  <ul>
+    <li><b>Azalai salt traders:</b> best prices for desert gear and seals; their caravans move, so their stock changes.</li>
+    <li><b>Ferrymen of Kabara:</b> smuggled Syndicate parts with no questions asked, at a 30% markup.</li>
+    <li><b>Metalwork guild (freed):</b> after liberation the smiths build the top-tier upgrades for free if their forges are restored.</li>
+    <li><b>Syndicate quartermasters:</b> can be bribed through a forged ID. Cheap, risky, and every purchase is logged.</li>
+  </ul>
+  <div class="callout red"><span class="label">Risk &amp; consequence</span><p>Buying from the Syndicate lowers populace Accord when the ledgers leak. Stripping a Faya spire for circuit thread silences it, but a stripped spire cannot be turned to KRF broadcasts later.</p></div>
+</section>
+
+<section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="The Well of Sankoré: Base Building" data-chapter="Chapter 19 · The Well">
+  <div class="ch-head"><span class="kicker">Chapter 19 · Systems</span><h2 class="ch-title">The Well of Sankoré: Base Building</h2>
+  <p class="lede">A cellar under a ruined school becomes the capital of a free city, one room at a time.</p></div>
+  <p>The Well of Sankoré is the KRF headquarters and the player's hub. At the start of the Prologue it is a damp vault with Amadou's empty desk, a cot and a radio that only hisses. By the Siege it is a buzzing underground town. Every room is built with salvage, staffed by recruits the player has won, and opened by choices made in the world.</p>
+  <h3>Rooms</h3>
+  <div class="tablewrap"><table class="codex">
+    <tr><th>Room</th><th>Unlocked by</th><th>Function</th></tr>
+    <tr><td>Amadou's Study</td><td>Start</td><td>Clue Board, the Letter, manuscripts index</td></tr>
+    <tr><td>The Forge</td><td>Rescue a Metalwork smith</td><td>Weapon upgrades, armor repair</td></tr>
+    <tr><td>Weaving Loft</td><td>Free the Weaving Cluster</td><td>Rune patterns, cloak and gauntlet mods</td></tr>
+    <tr><td>Relay Room</td><td>Dusé joins (Act II)</td><td>Relay upgrades, intercept missions</td></tr>
+    <tr><td>Library of Return</td><td>Return 10 manuscripts</td><td>Echo songs, lore, Griot Circle missions</td></tr>
+    <tr><td>Infirmary</td><td>Recruit a field medic</td><td>Faster recovery of wounded recruits</td></tr>
+    <tr><td>Lantern Roost</td><td>Earn Moussa's trust</td><td>Courier network: rumours, map reveals</td></tr>
+    <tr><td>War Room</td><td>Act II midpoint</td><td>Strategy choice table; Siege planning</td></tr>
+    <tr><td>Skiff Bay</td><td>Azalai alliance</td><td>Vehicle upgrades, caravan dispatch</td></tr>
+  </table></div>
+  <h3>Recruits who live there</h3>
+  <p>Named recruits move in once won: a smith who hums Wassoulou songs at the anvil, two Unveiled defectors who keep apart from everyone, a Ferryman who sleeps in a pirogue hauled down the stairs. Each has a daily routine, a small personal quest and a job. Recruits can be sent on <b>dispatch missions</b> for resources while the player is in the field, but every dispatch carries a risk of injury, capture or death shown before you commit.</p>
+  <div class="vignette"><p>The stairs used to be dark. Now someone has painted the steps with chalk arrows, and a Lantern Child sits at the bottom selling roasted groundnuts for salt. <span class="speaker">Awa</span> "When did we get a market?" <span class="speaker">Khalil</span> "When we stopped being a hideout."</p></div>
+  <h3>How the Well changes</h3>
+  <div class="grid-3">
+    <div class="card"><h4>Stage 1 · Hideout</h4><p>One lamp, bare banco, dripping Foggara water. Silence, radio static.</p></div>
+    <div class="card"><h4>Stage 2 · Cell</h4><p>Bogolan cloths over the walls, a working forge, recruits cooking. Music returns after Faya falls.</p></div>
+    <div class="card"><h4>Stage 3 · Capital</h4><p>Restored grid light, a reading room full of rescued manuscripts, a map wall of the whole city, a broadcast desk aimed at Bamako.</p></div>
+  </div>
+  <div class="callout red"><span class="label">Risk &amp; consequence</span><p>A bigger Well is easier to find. Past Stage 2 the Syndicate can raid it if J-Sector alert stays high, and rooms lost in a raid must be rebuilt.</p></div>
+</section>
+
+<section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="Interface and HUD" data-chapter="Chapter 19 · Interface">
+  <div class="ch-head"><span class="kicker">Chapter 19 · Systems</span><h2 class="ch-title">Interface and HUD</h2>
+  <p class="lede">The city is the interface. The HUD only speaks when it has something to say.</p></div>
+  <p>Our HUD philosophy is minimal by default. Health, ammunition and the Grid gauge fade out when full and idle; they return the moment they change. There is no mini-map. Direction comes from a thin compass strip, from landmarks like spires and Sun Steles, and from Lantern Children who wave the player down. A full HUD and a zero-HUD mode are both in settings.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 600 340" role="img" aria-label="HUD mock-up" font-family="Cinzel">
+      <rect x="10" y="10" width="580" height="320" fill="none" stroke="#b45309" stroke-width="2"/>
+      <path d="M10 250 L120 200 L200 230 L300 170 L420 220 L590 190" fill="none" stroke="#b45309" stroke-width="1" stroke-dasharray="4 4"/>
+      <g stroke="#b45309" stroke-width="1.5" fill="none">
+        <line x1="190" y1="30" x2="410" y2="30"/>
+        <line x1="300" y1="24" x2="300" y2="36"/><line x1="245" y1="26" x2="245" y2="34"/><line x1="355" y1="26" x2="355" y2="34"/>
+      </g>
+      <text x="300" y="52" font-size="11" fill="#451a03" text-anchor="middle">N · Spire of the Codified Word 340 m</text>
+      <path d="M300 190 m-10 0 l20 0 m-10 -10 l0 20" stroke="#451a03" stroke-width="1.5"/>
+      <g fill="none" stroke="#0e7490" stroke-width="1.5">
+        <path d="M30 300 l10 -10 l10 10 l-10 10 z"/><path d="M50 300 l10 -10 l10 10 l-10 10 z"/><path d="M70 300 l10 -10 l10 10 l-10 10 z"/><path d="M90 300 l10 -10 l10 10 l-10 10 z"/>
+      </g>
+      <g fill="#0e7490" opacity="0.6"><path d="M30 300 l10 -10 l10 10 l-10 10 z"/><path d="M50 300 l10 -10 l10 10 l-10 10 z"/><path d="M70 300 l10 -10 l10 10 l-10 10 z"/></g>
+      <text x="30" y="282" font-size="10" fill="#451a03">Health · 3 of 4 chevrons</text>
+      <rect x="30" y="318" width="120" height="5" fill="none" stroke="#b45309"/>
+      <rect x="30" y="318" width="80" height="5" fill="#b45309"/>
+      <text x="155" y="324" font-size="9" fill="#451a03">Grid</text>
+      <text x="570" y="305" font-size="16" fill="#451a03" text-anchor="end">Heat 42%</text>
+      <text x="570" y="322" font-size="10" fill="#451a03" text-anchor="end">Energy Rifle · Spear ready</text>
+      <circle cx="520" cy="80" r="26" fill="none" stroke="#6b21a8" stroke-width="1.5"/>
+      <text x="520" y="84" font-size="10" fill="#6b21a8" text-anchor="middle">Relay</text>
+      <text x="520" y="122" font-size="9" fill="#6b21a8" text-anchor="middle">Dusé · 2 charges</text>
+      <g stroke="#991b1b" stroke-width="2" fill="none">
+        <path d="M150 150 l-14 -8 m14 8 l-14 8"/>
+        <path d="M450 140 a30 30 0 0 1 20 20"/>
+      </g>
+      <text x="120" y="130" font-size="9" fill="#991b1b">Noise arc</text>
+      <text x="440" y="128" font-size="9" fill="#991b1b">Searching</text>
+      <path d="M240 110 l12 -14 l12 14 l-12 14 z" fill="none" stroke="#991b1b" stroke-width="1.5"/>
+      <text x="252" y="140" font-size="9" fill="#991b1b" text-anchor="middle">Tagged</text>
+      <text x="30" y="40" font-size="10" fill="#451a03">Lead · The Bribed Captain</text>
+      <text x="30" y="54" font-size="9" fill="#991b1b">expires in 2 days</text>
+    </svg>
+    <figcaption>HUD mock-up in combat. Bogolan chevrons for health, a single Grid bar, a compass strip with a landmark, Dusé's violet relay ring, and red detection arcs at the screen edge.</figcaption>
+  </figure>
+  <div class="grid-2">
+    <div class="card"><h4>The Bogolan UI language</h4><p>All menus are drawn as mud cloth: black and bronze on raw-cotton beige. Health is a row of chevrons, a classic Bogolan motif. Detection arcs are drawn like the zig-zag "path of the snake" pattern, filling as an enemy notices you. Menus open like a cloth unrolled across a table. Faction colours stay narrow: orange for Faya, cyan for J-Sector, ochre for MLI-Z, violet for Dusé.</p></div>
+    <div class="card"><h4>Echo Sight overlay</h4><p>On activation the world drops to warm sepia and every HUD element fades except the Grid bar, which drains as you look. Historical figures are outlined in thin gold. Layer years appear as a vertical scroll at the right edge (1350 · 1590 · 2070). Burned data shows as drifting static, so the player sees exactly what Faya destroyed.</p></div>
+  </div>
+  <p><b>The clue board</b> opens as a full-screen cloth with tiles pinned in place. Links are drawn as stitched thread; failed links unpick themselves with a soft sound. Leads carry the amber, cyan or red thread colour, and the Letter sits at the centre, its deciphered glyphs filling in as the game goes on.</p>
+</section>
+
+<section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="Accessibility and Difficulty" data-chapter="Chapter 19 · Accessibility">
+  <div class="ch-head"><span class="kicker">Chapter 19 · Systems</span><h2 class="ch-title">Accessibility and Difficulty</h2>
+  <p class="lede">The rebellion needs everyone. So does the game.</p></div>
+  <p>Accessibility is designed in from the first prototype, not patched on at the end. Every option below can be changed at any time without penalty, and none of them lock achievements or endings. The weight of the story's choices stays the same at every difficulty: only the fighting changes.</p>
+  <h3>Difficulty modes</h3>
+  <div class="tablewrap"><table class="codex">
+    <tr><th>Mode</th><th>For</th><th>What changes</th></tr>
+    <tr><td>Griot</td><td>Players here for the story and the Echo</td><td>Enemies deal 40% damage, alert drops fast, puzzles offer hints after one failure.</td></tr>
+    <tr><td>Scout</td><td>Standard experience</td><td>Balanced damage and AI adaptation; checkpoints at every courtyard.</td></tr>
+    <tr><td>Rebel</td><td>Experienced shooter players</td><td>Full enemy adaptation, scarce Grid cells, Wardens flank more aggressively.</td></tr>
+    <tr><td>Harmattan</td><td>The hardest test</td><td>No HUD by default, permanent recruit deaths, one save slot, gunships arrive at Searching.</td></tr>
+  </table></div>
+  <p>Combat and stealth difficulty can also be set separately. A player who loves stealth but struggles with firefights can run Rebel stealth with Griot combat.</p>
+  <h3>Assist options</h3>
+  <ul>
+    <li>Aim assist with three strengths, plus a "spear magnet" that widens the throw window.</li>
+    <li>Slow-motion while the relay wheel or rune wheel is open.</li>
+    <li>Hold-to-press instead of rapid button taps; toggle instead of hold for aim, sprint and cloak.</li>
+    <li>Rune-weaving input can be replaced by a simple radial choice for players who cannot trace patterns.</li>
+    <li>Auto-skip for Sun Stele and Echo puzzles after three attempts, with the lore still delivered.</li>
+    <li>Navigation ping that points to the next amber lead for players who need it.</li>
+  </ul>
+  <div class="grid-2">
+    <div class="card"><h4>Subtitles and language</h4><p>Full voice and subtitles in <b>Bambara, French and English</b>, with Tamasheq and Songhai lines kept in the original and subtitled. Speaker names are coloured by faction, with size, background box and opacity adjustable. Every important sound (footsteps, spire broadcasts, gunship rotors) has a captioned direction indicator.</p></div>
+    <div class="card"><h4>Colour-blind modes</h4><p>Presets for protanopia, deuteranopia and tritanopia. Faction colours never carry meaning alone: Faya targets add a triangle mark, Syndicate a square, MLI-Z a diamond. Clue thread colours also get stitch patterns (solid, dashed, dotted) so leads stay readable in any mode.</p></div>
+    <div class="card"><h4>Motion settings</h4><p>Camera shake, recoil kick and head bob each on their own slider. Field of view from 70 to 110. The Erg dune shift and lattice rides offer a fixed-horizon option. Harmattan dust can be thinned visually while keeping its gameplay effect.</p></div>
+    <div class="card"><h4>Hearing and reading</h4><p>Mono audio, visual cues for audio-only alerts, adjustable text size up to 200%, and a dyslexia-friendly font for menus and the clue board.</p></div>
+  </div>
+  <div class="callout green"><span class="label">Ally note</span><p>Every option is to be playtested with disabled players in Bamako and the diaspora before lock. The radial rune input and the separate stealth slider exist so that no player is shut out of Awa's kit.</p></div>
+</section>
