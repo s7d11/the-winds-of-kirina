@@ -117,8 +117,8 @@ Amadou disappears. Khalil and Awa find his empty vault, the bypass keys, and the
 - Endings (based on accumulated choices & reputation):
   1. **Reunification** — Timbuktu rejoins Mali; elections announced; Tenzar autonomy negotiated.
   2. **The Fragile Accord** — city free but divided; reunification pending.
-  3. **The Iron Peace** — Syndicate broken but KRF rules by force; Khalil/Awa question what they became.
-  4. **The Silent Wind** (fail state) — the Core is lost; the resistance scatters.
+  3. **The Iron Peace** — Syndicate broken but KRF rules by force; Khalil/Awa question what they became. An EQUAL ending with its own full epilogue, not a penalty screen.
+  4. **The Silent Wind** (fail state) — the Core is lost; the resistance scatters. Amadou escapes with the scattered KRF into the desert and becomes keeper of the next attempt.
 
 ## 7. Game systems (canon terms)
 - **Echo Layer / Echo Sight**: environmental hacking overlays historical datastreams on the modern ruins (holographic reconstructions of historic libraries, scholars, markets). Puzzles and lore. Central to cultural identity.
@@ -127,7 +127,7 @@ Amadou disappears. Khalil and Awa find his empty vault, the bypass keys, and the
 - **Combat**: heavy recoil, armor deformation, destructible banco and concrete cover, electrical conduits that spark/detonate, metal doors that buckle under breaching.
 - **Team combos**: e.g., Dusé hijacks a turret + Awa vent shot + Khalil breach.
 - **Reputation / Accord meter**: standing with KRF, populace, MLI-Z, Griot Circle, Azalai, Ferrymen, Lantern Children, Unveiled.
-- Character swap between Khalil and Awa in the open world; Dusé as remote support.
+- Character swap between Khalil and Awa in the open world; Dusé as remote support, plus short playable in-person sequences after Interlude II (see §9).
 - Open-world traversal: on foot, **sand-skiffs** (hover sleds), Azalai caravans, river pirogues.
 
 ## 7b. Ascension (powered-up forms)
@@ -139,3 +139,24 @@ Amadou disappears. Khalil and Awa find his empty vault, the bypass keys, and the
 ## 8. Teaser
 - The teaser "The Winds Remember" (about 54 seconds) is described beat by beat in Part VII, Chapter 21. Video-generation prompts are kept out of this repository.
 - All on-screen and background text is Latin script only.
+
+## 9. Settled decisions
+1. **Amadou in The Silent Wind:** he is freed during the Siege in every ending; in the Silent Wind he escapes with the scattered KRF into the Foggara and the desert, and keeps the Letter's cipher alive for "the next wind". He never dies on-screen.
+2. **Dusé is playable in short in-person sequences** after his Interlude II reveal: (a) the end of "The Access Key" (the Kabara roof and Cissé's annex), (b) "Ghost Run" during the Siege — Dusé alone on the Citadel relay floor while the cousins fight below, (c) optional "Relay Night" side missions. Kit: compact sidearm, data tablet, turret subversion, override pulse, grid hacks; fragile, no heavy weapons, no melee kills. Khalil and Awa remain the two main playable heroes; Dusé stays remote support in normal open-world play.
+3. **Branch scope at launch:** the canonical path ships at full quality. Drawer, Alpha, Beta and the war with Tenzar ship as shorter variant missions that reuse spaces; all four endings ship at launch.
+4. **Ascension in the vertical slice:** the slice includes the unstable Act I taste once (scripted, about 20 seconds); full Ascension is held for Act III.
+5. **MLI-Z endgame if the player fights Tenzar:** Teyr is never killed by the player. After Tin-Zawar falls he sues for terms late, at a higher price (a sovereignty referendum clause, the eastern wells, the release of Ibbo ag Menna). Refusing sends him to the Erg, a sequel thread.
+6. **Sensitivity review:** a Malian cultural panel (historian, griot, Tamasheq and Songhai advisers, a Muslim scholar, a women's-rights advocate) reviews at both the vertical slice and before the first public reveal; it has binding say on cultural and religious depiction.
+7. **Royale monetisation:** cosmetic-only seasonal pass; no paid power; no sacred or family Bogolan motifs sold as skins (patterns are licensed from living artists who are paid).
+8. **Awa's hair:** short braids, locked for the model sheet.
+9. **Age rating:** target Mature/18 for combat intensity; atrocities against women and children are shown through aftermath and systems, never staged as playable or lingering violence.
+10. **The Iron Peace:** equal ending with its own full epilogue and no gameplay penalty; its cost is moral, shown in who stays and who leaves.
+
+## 10. Naming conventions (binding for new names)
+- Manding (Bambara/Malinké) names: given name + jamu (clan name): Traoré, Diarra, Dembélé, Sidibé, Fofana, Samaké, Togola, Doumbia, Berthé. Griot lineages: Kanouté, Diabaté.
+- Songhai names (Timbuktu, Gao): Maïga, Cissé, Touré, Tessougué; Fula: Bâ, Sylla, Sall, Sidibé; Soninke: Sacko, Diawara, Sylla; Bozo river families: Kanta, Nientao.
+- Tamasheq: "ag" = son of, "welet" = daughter of, followed by the father's given name (Amastan ag Tidit; Inawalen welet Alhassane is his niece).
+- Titles: Nana (elder woman), Mama (respectful for an older woman), Dr., military ranks.
+- Invented surnames belong only to the top antagonists and are explained in-world: **Vohl** and **Dram** are Word-names taken at the Reading oath (the Conclave erases birth names); **Vey** and **Varan** are Bright-Decades holding-company names that founding Board families took as surnames; **Teyr** is Assalan's nom de guerre from the Scramble. Their birth names are never given.
+- Never use names that point at real living public figures (see the private naming notes). No two characters share a given name; no surname is shared across factions unless they are kin. Awa's name is unique (no Hawa).
+- Current cast after the 2026-11 name review: Halima Cissé (was Sall), Idrissa Togola (was Kanouté), Nènè Doumbia (was Hawa Tangara), Bocar Diawara (was Salif Konta), Oumar Sylla (was Dicko), Adama Berthé (was Sangaré), Maïmouna Samaké (was Rokia), Sidiki Sinayogo (was Bakary), Dr. Zeinabou Maïga (was Aïssata), Takamat welet Assa, Inawalen welet Alhassane.

@@ -4,7 +4,7 @@
 
 **Read it online:** https://s7d11.github.io/the-winds-of-kirina/
 
-In the year 2142 Timbuktu stands severed from Mali, divided between corporate oligarchs, zealots and separatists. Two cousins, Khalil and Awa, go looking for a missing father and find a nation instead. This 185-page Tiira covers the world, the factions, the characters, the full branching campaign (*The Sahara Rebellion*), the game systems, the *Harmattan Royale* multiplayer mode, art direction, and in-world tales. It opens with a publisher pitch and the complete storyline told as prose.
+In the year 2142 Timbuktu stands severed from Mali, divided between corporate oligarchs, zealots and separatists. Two cousins, Khalil and Awa, go looking for a missing father and find a nation instead. This 208-page Tiira covers the world, the factions, the characters, the full branching campaign (*The Sahara Rebellion*), the game systems, the *Harmattan Royale* multiplayer mode, art direction, and in-world tales. It opens with a publisher pitch and the complete storyline told as prose.
 
 All factions, leaders, creeds and events are fictional. The world draws on the real history and culture of Mali.
 
@@ -13,7 +13,7 @@ All factions, leaders, creeds and events are fictional. The world draws on the r
 | Page | What it is |
 |---|---|
 | [`/`](https://s7d11.github.io/the-winds-of-kirina/) | Presentation page with the concept reel, characters, world and campaign |
-| [`/tiira/`](https://s7d11.github.io/the-winds-of-kirina/tiira/) | The full Tiira: 185 pages, including the pitch and the complete story (built from `book/`) |
+| [`/tiira/`](https://s7d11.github.io/the-winds-of-kirina/tiira/) | The full Tiira: 208 pages, including the pitch and the complete story (built from `book/`) |
 
 ## Repository layout
 
