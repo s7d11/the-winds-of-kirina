@@ -172,6 +172,45 @@ section.part-opener.active{display:flex;flex-direction:column;justify-content:ce
 .cover .sub{font-family:'Cinzel';font-size:clamp(14px,2vw,20px);color:#78350f;letter-spacing:.2em;margin-top:.4em}
 .cover .tag-line{font-style:italic;font-size:18px;color:var(--ink-soft);max-width:520px;margin-top:1.2em}
 
+
+/* Front & back covers */
+section.cover-page.active{height:100%}
+.cover-front,.cover-back{position:relative;height:100%;min-height:560px;border-radius:10px;overflow:hidden;background:#000;color:#f3e3c3;
+  box-shadow:inset 0 0 0 1px rgba(217,119,6,.35),inset 0 0 0 7px #0b0a09,inset 0 0 0 8px rgba(217,119,6,.25)}
+.cover-front{display:flex;flex-direction:column;align-items:center}
+.cf-hero{position:absolute;bottom:0;height:88%;width:auto;max-width:44%;object-fit:contain;object-position:bottom;opacity:.95;
+  -webkit-mask-image:linear-gradient(to top,transparent 0,#000 18%,#000 80%,transparent 100%);mask-image:linear-gradient(to top,transparent 0,#000 18%,#000 80%,transparent 100%)}
+.cf-left{left:2%}.cf-right{right:2%}
+.cover-front::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 30%,rgba(180,83,9,.28),transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(14,116,144,.18),transparent 55%);pointer-events:none}
+.cf-title{position:relative;z-index:3;text-align:center;margin-top:7%;padding:0 18%}
+.cf-vol{font-family:'Orbitron';font-size:11px;letter-spacing:.38em;color:#f59e0b;text-transform:uppercase}
+.cf-title h2{font-family:'Cinzel';font-weight:900;font-size:clamp(40px,7.2vw,78px);line-height:1;letter-spacing:.08em;margin:.25em 0 .1em;
+  background:linear-gradient(180deg,#fde68a 0%,#f59e0b 55%,#b45309 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 18px rgba(0,0,0,.9))}
+.cf-sub{font-family:'Cinzel';font-size:clamp(13px,1.8vw,18px);letter-spacing:.24em;color:#e7d3b0}
+.cf-rule{width:120px;height:1px;margin:16px auto;background:linear-gradient(90deg,transparent,#22d3ee,transparent)}
+.cover-front p.cf-tag{font-style:italic;font-size:17px;color:#d6c3a1;margin:0}
+.cover-front::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;z-index:1;background:linear-gradient(transparent,#000 85%)}
+.cf-author{position:absolute;z-index:3;bottom:46px;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:700;font-size:clamp(16px,2.2vw,22px);letter-spacing:.42em;color:#fbbf24}
+.cf-hint{position:absolute;z-index:3;bottom:12px;left:0;right:0;text-align:center;margin:0!important;font-size:12.5px!important;color:#a8916d}
+.cf-hint a{color:#fbbf24}
+.cover-back{display:flex;flex-direction:column}
+.cb-art{position:absolute;inset:0;background:url(../assets/concept-shadow-orb.jpg) center 30%/cover;opacity:.38}
+.cover-back::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.2),rgba(11,10,9,.85) 45%,#0b0a09 100%)}
+.cb-body{position:relative;z-index:2;margin:auto;max-width:640px;padding:28px 26px;text-align:center}
+.cb-kicker{font-family:'Orbitron';font-size:11px!important;letter-spacing:.38em;color:#f59e0b;text-transform:uppercase}
+.cover-back p.cb-blurb{font-size:17.5px;line-height:1.6;color:#f3e3c3;text-align:left}
+.cb-quote{font-family:'Cinzel';font-size:16px;color:#fde68a;margin:16px auto;max-width:520px;line-height:1.5}
+.cb-quote span{display:block;font-family:'EB Garamond';font-style:italic;font-size:14px;color:#a8916d;margin-top:4px}
+.cb-cast{display:flex;justify-content:center;gap:14px;margin:12px 0 14px}
+.cb-cast figure{margin:0;text-align:center}
+.cb-cast img{width:66px;height:66px;border-radius:50%;object-fit:cover;object-position:top;border:1px solid rgba(245,158,11,.6);background:#000}
+.cb-cast figcaption{font-family:'Cinzel';font-size:10.5px;letter-spacing:.1em;color:#e7d3b0;margin-top:4px}
+.cover-back p.cb-contents{font-size:14px;color:#bba887;font-style:italic}
+.cb-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(217,119,6,.35);padding-top:10px;margin-top:8px}
+.cb-author{font-family:'Cinzel';font-weight:700;letter-spacing:.35em;color:#fbbf24}
+.cb-mark{font-family:'Orbitron';font-size:9px;letter-spacing:.25em;color:#22d3ee;text-transform:uppercase}
+@media(max-width:640px){.cf-hero{max-width:48%;height:70%;opacity:.7}.cf-title{padding:0 6%}.cover-front,.cover-back{min-height:78vh}}
 @media(max-width:640px){.viewport{height:auto;min-height:80vh}#pages{overflow:visible}.foot .lbl{display:none}}
 
 /* Print / read-all mode */
@@ -185,7 +224,17 @@ body.readall #pages{overflow:visible}
   #pages{overflow:visible}
   section.page{display:block!important;break-after:page;animation:none}
   section.part-opener{min-height:90vh;display:flex!important}
+  .backlink,.cf-hint,.runhead,.toc-filter{display:none!important}
+  body,.book,.viewport,#pages{display:block!important;overflow:visible!important;height:auto!important;min-height:0!important;max-width:none!important}
+  body.readall section.page{border-bottom:0;padding-bottom:0;margin-bottom:0}
+  section.page:last-child{break-after:auto}
+  section.cover-page{page:cover;height:auto}
+  .cover-front,.cover-back{height:297mm;min-height:0;border-radius:0;box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .viewport,#pages{padding:0!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+@page{size:A4;margin:16mm 15mm 18mm;@bottom-center{content:counter(page);font-family:'Cinzel',serif;font-size:9pt;color:#78350f}}
+@page cover{margin:0;@bottom-center{content:none}}
 </style>
 </head>
 <body>
@@ -203,36 +252,19 @@ body.readall #pages{overflow:visible}
     <div class="runhead"><span id="run-l">The Winds of Kirina</span><span class="r" id="run-r">Kirina Resistance Archive</span></div>
     <div id="pages">
 <!-- ===== 00-front.html ===== -->
-<section class="page" data-part="F" data-part-title="Front Matter" data-tab="Cover" data-title="Cover" data-chapter="Volume I">
-  <div class="cover">
-    <span class="vol">Tiira · Volume I</span>
-    <svg viewBox="0 0 320 120" width="300" style="margin:22px 0 6px" aria-hidden="true">
-      <g fill="none" stroke="#b45309" stroke-width="2" stroke-linejoin="round">
-        <path d="M14 110 L18 72 Q20 66 24 66 L58 66 Q62 66 64 72 L68 110"/>
-        <path d="M30 66 L33 44 Q41 36 49 44 L52 66"/>
-        <path d="M92 110 L92 74 L120 74 L126 34 Q148 4 170 34 L176 74 L204 74 L204 110"/>
-        <path d="M138 110 L138 92 Q148 82 158 92 L158 110"/>
-        <path d="M228 110 L232 70 Q234 62 240 60 L246 40 Q254 30 262 40 L268 60 Q274 62 276 70 L280 110"/>
-        <path d="M294 110 L294 88 Q300 82 306 88 L306 110"/>
-        <line x1="0" y1="110" x2="320" y2="110"/>
-      </g>
-      <g stroke="#78350f" stroke-width="2.4" stroke-linecap="round">
-        <line x1="118" y1="46" x2="128" y2="46"/><line x1="168" y1="46" x2="178" y2="46"/><line x1="121" y1="60" x2="131" y2="60"/><line x1="165" y1="60" x2="175" y2="60"/>
-        <line x1="137" y1="24" x2="145" y2="24"/><line x1="151" y1="24" x2="159" y2="24"/>
-        <line x1="26" y1="52" x2="34" y2="52"/><line x1="48" y1="52" x2="56" y2="52"/>
-        <line x1="240" y1="48" x2="248" y2="48"/><line x1="260" y1="48" x2="268" y2="48"/>
-      </g>
-      <g stroke="#0e7490" stroke-width="1.1" opacity=".75" fill="none">
-        <path d="M148 14 L148 70 M100 86 L196 86"/><path d="M254 36 L254 76"/><path d="M41 42 L41 80"/>
-      </g>
-    </svg>
-    <h2>The Winds<br>of Kirina</h2>
-    <div class="sub">Chronicles of Timbuktu · 2142</div>
-    <div class="ornament"></div>
-    <p class="tag-line">Where the ancient sands of knowledge meet the high-tech shadows of 2142.</p>
-    <p class="tech" style="font-size:10px;color:#155e75;margin-top:1.4em">The Tiira · Story Bible · Game Design Document</p>
-    <p style="font-size:14px;color:#78350f;margin-top:2em">Use the arrows, the tabs above, or your keyboard ← → to turn the pages.</p>
-    <p style="font-size:14px;margin-top:.6em"><a href="../" style="color:#b45309;font-family:Cinzel;font-weight:700;letter-spacing:.08em">&larr; Back to the presentation page</a></p>
+<section class="page cover-page" data-part="F" data-part-title="Front Matter" data-tab="Cover" data-title="Front Cover" data-chapter="Volume I">
+  <div class="cover-front">
+    <img class="cf-hero cf-left" src="../assets/khalil.jpg" alt="Khalil, with his cyan spear and turban drawn across his face">
+    <img class="cf-hero cf-right" src="../assets/awa.jpg" alt="Awa, in Bogolan armour with her red blade">
+    <div class="cf-title">
+      <span class="cf-vol">The Tiira · Volume I</span>
+      <h2>The Winds<br>of Kirina</h2>
+      <div class="cf-sub">Chronicles of Timbuktu · 2142</div>
+      <div class="cf-rule"></div>
+      <p class="cf-tag">The wind that crossed Kirina is still crossing.</p>
+    </div>
+    <div class="cf-author">NJ Talsim</div>
+    <p class="cf-hint">Turn the pages with the arrows, the tabs or your keyboard ← →. · <a href="../">Back to the presentation</a></p>
   </div>
 </section>
 
@@ -291,8 +323,7 @@ body.readall #pages{overflow:visible}
   <p class="lede" style="margin:0">The book opens with the pitch and the complete story, then eight parts and a set of appendices. Each type of passage has its own look.</p></div>
   <div class="vignette"><p>Passages like this one are <b>in-world narrative</b>: scenes, voices and fragments from inside Timbuktu in 2142.</p></div>
   <div class="callout"><span class="label">Lore note</span><p>Amber boxes give world facts: history, places and culture.</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Cyan boxes explain how something plays: the mechanics, the systems and the player experience.</p></div>
-  <div class="callout red"><span class="label">Risk &amp; consequence</span><p>Red boxes mark escalation, failure states and the cost of choices.</p></div>
+    <div class="callout red"><span class="label">Risk &amp; consequence</span><p>Red boxes mark escalation, failure states and the cost of choices.</p></div>
   <div class="callout purple"><span class="label">Dusé's channel</span><p>Purple boxes carry intercepted transmissions and hacker commentary.</p></div>
   <div class="tablewrap"><table class="codex">
     <tr><th>Part</th><th>Title</th><th>Covers</th></tr>
@@ -960,8 +991,7 @@ body.readall #pages{overflow:visible}
     <p>Victory was followed by an assembly. At Kouroukan Fouga, the clan leaders met to decide how the new realm would be governed. Oral tradition preserves what they agreed: the division of the realm among the clans, the duties between them, protections for women and for strangers, and a rule that every human life is sacred. Griot families have carried this charter down the centuries by memory. In 2009 UNESCO recognised the Manden Charter, proclaimed in Kurukan Fuga, as intangible cultural heritage of humanity.</p>
     <p>Sundiata took the title Mansa. The Mali Empire he founded would stretch from the Atlantic coast to the bend of the Niger and last for some three hundred years.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note · Why "Kirina"</span><p>The game is named for a unification, not a conquest. Kirina was won by scattered peoples who agreed to stand together, and then wrote down how they would live. That is the arc of <i>The Sahara Rebellion</i>: a broken Timbuktu, three rival powers, and a resistance whose victory only counts if it ends in a shared charter and a reunited Mali. Every ending is measured against Kirina.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="The City of Manuscripts" data-chapter="Chapter 1 · The Golden Age">
   <div class="ch-head"><span class="kicker">Chapter 1 · The Golden Age</span><h2 class="ch-title">The City of Manuscripts</h2>
@@ -992,8 +1022,7 @@ body.readall #pages{overflow:visible}
   <h3>The Echo</h3>
   <p>The defining project of the age was the digitisation of the manuscripts. Every page from every family library that consented was scanned, transcribed, translated and annotated. The result was not stored in one archive. Its engineers wove it into the city itself, through the lattice nodes, the Steles and the street lighting, so that history became a <b>datastream</b> you could walk through. They called it the <b>Echo</b>. Stand in the right courtyard with the right lens and you could watch a sixteenth-century jurist teach his students, or hear a merchant haggle over salt.</p>
   <div class="callout red"><span class="label">The cost nobody counted</span><p>The Bright Decades were not as bright everywhere. The data halls and the grid were built on contracts that put national infrastructure in private hands. The northern borderlands got pipelines running through them and little else. The power was centralised in Bamako's control systems, efficient and fragile. When the centre failed in 2092, everything hanging from it fell too.</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The Bright Decades are the source of almost every traversal toy in the open world: Steles as puzzle objects, lattice anchors as grapple and lift points, bastions as vertical dungeons, and the Echo as the lore and hacking layer seen through Echo Sight.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="The Fracture of 2092" data-chapter="Chapter 2 · Rise and Fracture">
   <div class="ch-head"><span class="kicker">Chapter 2 · Rise and Fracture</span><h2 class="ch-title">The Fracture of 2092</h2>
@@ -1056,8 +1085,7 @@ body.readall #pages{overflow:visible}
     <li><b>2139</b> — The Grid Famine. Rolling blackouts; J-Sector sells power by the hour.</li>
     <li><b>2142</b> — Dr. Amadou leaves to retrieve the Kirina Core and does not return. The game begins.</li>
   </ul>
-  <div class="callout cyan"><span class="label">Design note</span><p>Dates before 1600 are real history and should stay accurate in all in-game text. Dates after 2060 are fiction. The 2013 entry is the deliberate hinge between them: a real act of cultural rescue that the fiction treats as the KRF's spiritual origin.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="Timbuktu, 2142" data-chapter="Chapter 3 · The City in 2142">
   <div class="ch-head"><span class="kicker">Chapter 3 · The City in 2142</span><h2 class="ch-title">Timbuktu, 2142</h2>
@@ -1127,8 +1155,7 @@ body.readall #pages{overflow:visible}
   <p class="lede">Mud first. Machine second. The circuitry should feel like it grew in the walls.</p></div>
   <p class="drop-cap">Timbuktu in 2142 is still a mud city. Walls are built of <b>banco</b>, sun-dried earth bricks mixed with straw and rendered with a smooth earthen plaster. Façades carry the Sudano-Sahelian vocabulary players will recognise from Djenné and the old mosques: buttresses ending in pinnacles, rhythmic vertical ribs, carved wooden doors studded with metal, and <b>toron</b>, the palm-wood beams that jut from the walls as permanent scaffolding.</p>
   <p>The future sits inside that vocabulary. A conduit runs along a rib rather than across it. A sensor is set into a toron beam. A cooling vent is carved as a lattice window. Seen from the street, a building should read as old first; the technology is what you notice second.</p>
-  <div class="callout cyan"><span class="label">Art direction · toning down the cyberpunk</span><p>The creator asked for the cyberpunk to be turned down. Rules for the environment team: no neon signs, no holographic billboards in residential streets, no chrome. Glow is restricted to thin circuit lines in the plaster, about a finger wide, in faction colours (orange for Faya, cyan for J-Sector, warm ochre lamplight in MLI-Z and KRF areas). At midday the circuit lines should be almost invisible in the sun.</p></div>
-  <div class="grid-2">
+    <div class="grid-2">
     <div class="card"><h4>Sun Steles</h4><p>Harvesting monuments shaped like tapering pillars, faced in banco with fluted collector channels. Many are dark or captured by J-Sector meters. Reawakening a Stele is a recurring environmental puzzle: rotate its faces, clear sand from its channels, and restore power to a neighbourhood.</p></div>
     <div class="card"><h4>Floating bastions</h4><p>Academies from the Bright Decades, hung on the levitation lattices. Earth-plastered undersides, tilted courtyards, broken cable lifts. Some list badly; some drift slowly with the lattice drift. They play as vertical exploration spaces.</p></div>
     <div class="card"><h4>The Bubble</h4><p>The <b>Aerostat Archive of Sankoré</b>: a sphere of glass panels held in a frame of banco ribs, floating above the Sankoré precinct. Inside, ramps spiral past empty reading alcoves. It is where Dr. Amadou went looking for the city's power, and where the Prologue's trail leads first.</p></div>
@@ -1145,8 +1172,7 @@ body.readall #pages{overflow:visible}
   <p>Outside Timbuktu there is no wasteland. The Sahel in 2142 is harsh but inhabited: herders move with their animals, the Azalai still cross with salt, and the river carries boats day and night. The land is not a ruin to scavenge; it is a set of systems with their own rules, and the player has to learn them.</p>
   <h3>The Erg of Echoes</h3>
   <p>East and north-east of the city lies a sea of dunes that the Azalai named for the sound it makes. Fragments of the Bright Decades' lattice anchors lie buried under the sand, and their failing fields push the dunes around. The Erg <b>rearranges itself</b>: ridges migrate overnight, corridors open and close, buried structures surface for an hour and vanish again.</p>
-  <div class="callout cyan"><span class="label">Design note · dynamic puzzle terrain</span><p>Dunes shift on a readable rhythm tied to wind direction and anchor pulses. Players can calm or provoke an anchor (Awa's runes, Khalil's spear-link overloading a node) to freeze a dune, reveal an entrance, or bury a pursuing patrol. Azalai guides teach the "wind reading" that predicts changes. The same terrain never plays the same way twice.</p></div>
-  <h3>The Foggara</h3>
+    <h3>The Foggara</h3>
   <p>A <b>foggara</b> is an old Saharan water system: a gently sloping tunnel that carries groundwater by gravity, with vertical shafts every few metres to dig and maintain it. Timbuktu's foggara were extended during the Bright Decades into service tunnels and cable runs, then forgotten. Today they form the <b>Undercity</b>: a network of dark channels, shaft-lit chambers and flooded stretches linking all three sectors. Smugglers, Lantern Children and the KRF use it. Every faction patrols its own entrances and pretends the rest does not exist.</p>
   <h3>The Niger and Kabara</h3>
   <p>Kabara, the old river port a few kilometres south of the city, is where the Niger's trade has always arrived. In 2142 J-Sector holds the docks, the cranes and the toll barges. The <b>Ferrymen of Kabara</b> hold everything else: the reed channels, the backwaters, the night routes, and long memories of every cargo that passed. Pirogues move under J-Sector's searchlights carrying grain, fuel and people.</p>
@@ -1194,8 +1220,7 @@ body.readall #pages{overflow:visible}
   <p>Outside Faya, people dress with pride. <b>Bogolanfini</b>, the mud cloth dyed with fermented mud and leaf decoctions into black, brown and cream geometric patterns, is everyday wear and a quiet political statement. Long robes, indigo veils and turbans protect against dust. Under Faya, dress is regulated: simplified, plain, slim garments and plain turbans, with no intricate embroidery and no Bogolan. Defacing Bogolan is a Warden pastime.</p>
   <h3>Music</h3>
   <p>Faya bans music in its sector. Instruments are confiscated and burned in the Burned Library Courtyard alongside manuscripts. People hum behind closed doors; griots perform in Foggara chambers. In J-Sector music is allowed and sold. In the Borderlands it never stopped, and the guitars of the desert carry across the dunes at night.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>Sector identity should be audible. The soundscape shifts from desert guitars and kora in the Borderlands to factory hum in J-Sector to a heavy, broadcast-filled silence in Faya. Restoring music to a Faya street after liberation is a felt reward.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="Voices of the City" data-chapter="Chapter 5 · The People">
   <div class="ch-head"><span class="kicker">Chapter 5 · The People</span><h2 class="ch-title">Voices of the City</h2>
@@ -1231,8 +1256,7 @@ body.readall #pages{overflow:visible}
   <h3>The flood clock</h3>
   <p>The rains fall far to the south in summer, but the water takes months to crawl through the delta. At Kabara the river rises from September, peaks around <b>December and January</b>, and drops to its lowest in May and June, when sandbanks break the surface and big boats run aground. The Ferrymen keep a flood calendar in knotted cord. J-Sector keeps one on a server, and the Ferrymen's is more accurate.</p>
   <div class="vignette"><p><span class="speaker">Captain Bintou Kanta</span>The Syndicate counts boats. I count water. When the river is low their barges sit on the sand like dead cows and my pirogues go where they like. When it is high, they own the middle and I own the edges. Either way the river decides, and the river has never once asked the Board for permission.</p></div>
-  <div class="callout cyan"><span class="label">Design note · the river as a region</span><p>Kabara and the Niger bend form a traversal region in their own right. Water level follows the in-game calendar: high water opens flooded backchannels and hides pirogues in the reeds; low water exposes sandbank paths, wrecked barges to loot, and Foggara outflows that are submerged the rest of the year. Ferrymen reputation unlocks night crossings and a pirogue fast-travel network.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="Economy of Scarcity" data-chapter="Chapter 5 · Field Notes">
   <div class="ch-head"><span class="kicker">Chapter 5 · Field Notes</span><h2 class="ch-title">Economy of Scarcity</h2>
@@ -1260,8 +1284,7 @@ body.readall #pages{overflow:visible}
   </table></div>
   <h3>The black markets</h3>
   <p>Three grey economies run alongside the licensed one. The <b>Low Shore</b> at Kabara is the river market, run by the Ferrymen and tolerated because J-Sector's own officers shop there. The <b>Foggara bazaars</b> appear in different tunnel chambers each week; the Lantern Children sell the location by the hour. The <b>Market of Silence</b> in Faya has its own hidden layer: goods change hands under the rule of no haggling, so prices are set by gestures and the weight of what is left on a cloth.</p>
-  <div class="callout cyan"><span class="label">Design note · the wallet</span><p>The player carries several currencies at once and exchange rates move with events. Sabotaging a substation spikes power-hours; a successful Azalai run drops salt prices; Strategy Alpha's leaks make data cheap and jetons nervous. Merchants remember who paid in what.</p></div>
-  <div class="callout red"><span class="label">Consequence</span><p>Freeing a district's power does not make it rich. After Operation Lantern, power-hours crash and the families who saved in them lose their savings. The game should show that cost.</p></div>
+    <div class="callout red"><span class="label">Consequence</span><p>Freeing a district's power does not make it rich. After Operation Lantern, power-hours crash and the families who saved in them lose their savings. The game should show that cost.</p></div>
 </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="Faith Before Faya" data-chapter="Chapter 5 · Field Notes">
@@ -1278,8 +1301,7 @@ body.readall #pages{overflow:visible}
   <p>The First Voice did not build his creed from nothing. He took the city's reverence for learning and turned it inside out. Where the scholars taught that every answer opens a further question, the Codified Word claims to be the last answer. Where the manuscripts were full of argument, his book has no margins. He borrowed the dress of piety and the vocabulary of the old schools, and used them to forbid the things those schools loved: music, debate, women teaching, the preservation of books.</p>
   <p>Most of the people living under Faya know this. Many of the oldest resisters in the Faya Sector are devout believers who regard the Codified Word as an insult to their faith. Some Wardens joined because they mistook one for the other.</p>
   <div class="pull">"The First Voice wrote a book so that nobody would need to read any other. Our grandfathers wrote a thousand so that nobody would ever stop."<cite>An imam of the old Sidi Yahia quarter, recorded by the Griot Circle</cite></div>
-  <div class="callout cyan"><span class="label">Design note · respect and clarity</span><p>No real faith is an enemy in this game. Faya's villainy lies in its invented doctrine and its methods: censorship, coercion, destruction of heritage. Writers and artists must keep real worship visible and sympathetic among the people the player protects. Prayer spaces are never combat targets, and the game never treats piety as a sign of allegiance to Faya. Liberation restores the old freedom to believe, to doubt and to argue.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="The Scholar Bastions" data-chapter="Chapter 4 · Field Notes">
   <div class="ch-head"><span class="kicker">Chapter 4 · Field Notes</span><h2 class="ch-title">The Scholar Bastions</h2>
@@ -1293,8 +1315,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>The Garden of Kouroukan</h4><p><span class="tag">Wreck · Erg of Echoes</span></p><p><b>Studied:</b> agronomy, desert hydrology and seed preservation. Its hanging fields fed students and tested crops for the Sahel.<br><b>Now:</b> fell in 2117 when its anchor failed in a storm. Its broken hull surfaces and sinks with the dunes. Its sealed seed vault is a prize the MLI-Z farmers want badly.</p></div>
     <div class="card"><h4>Minor bastions</h4><p>A dozen smaller reading rooms, chapels of study and weather posts still hang over the city. Most are a single room on a lattice tether, used by Lantern Children as lookouts and by smugglers as dead drops.</p></div>
   </div>
-  <div class="callout cyan"><span class="label">Design note · vertical dungeons</span><p>Each bastion is a self-contained vertical level with its own theme of traversal: the Observatory rotates, the Atelier is guarded, the Lyceum is cramped and close-quarters, the Garden is buried and changes with the dunes. Repairing a bastion's anchor is optional and permanent. It stabilises the structure, opens a cable-lift fast-travel point, and draws a faction's attention to it.</p></div>
-  <div class="callout red"><span class="label">Consequence</span><p>Stabilising a bastion takes power from the ground. Restoring the Observatory's anchor during the Grid Famine darkens a neighbourhood below it for a full in-game week.</p></div>
+    <div class="callout red"><span class="label">Consequence</span><p>Stabilising a bastion takes power from the ground. Restoring the Observatory's anchor during the Grid Famine darkens a neighbourhood below it for a full in-game week.</p></div>
 </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="Seasons of Timbuktu" data-chapter="Chapter 4 · Field Notes">
@@ -1312,8 +1333,7 @@ body.readall #pages{overflow:visible}
   <p><b>The Maouloud</b>. The feast of the Prophet's birth has long been Timbuktu's largest gathering, with readings from the manuscripts, processions between the mosques and visitors from across the Sahel. Under Faya it is reduced to one approved recitation. In the KRF's Well of Sankoré, the Griot Circle reads from originals that were never scanned.</p>
   <p><b>Return of the Azalai</b>. When the salt caravan comes in at the end of the cool season, Kabara's caravan yards fill with camels, sand-skiffs and traders. Prices drop, stories spread, and recruiting is easy.</p>
   <p><b>The Night of Fish</b>. A Ferrymen festival at the first big catch of the falling river, with pirogue races under J-Sector's searchlights.</p>
-  <div class="callout cyan"><span class="label">Design note · the living calendar</span><p>One in-game year runs on the world clock, with the seasons gating content rather than blocking it. Some operations are easier in one season: a Faya rooftop infiltration under Harmattan dust, a river run at high water, a Foggara job before the rains flood it. The Siege of Timbuktu always falls in the Harmattan. Festivals are open-world events that raise reputation with the populace and the matching ally group.</p></div>
-  <div class="vignette"><p><span class="speaker">Moussa "Little Lantern"</span>In the Harmattan the Wardens wrap their faces like everyone else. You can't tell who's who. That's the best season for running.</p></div>
+    <div class="vignette"><p><span class="speaker">Moussa "Little Lantern"</span>In the Harmattan the Wardens wrap their faces like everyone else. You can't tell who's who. That's the best season for running.</p></div>
 </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="The Wider Mali, 2142" data-chapter="Atlas">
@@ -1385,8 +1405,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>Spire of the Codified Word</h4><p><span class="tag red">Wardens</span></p><p><b>Looks:</b> the tallest silhouette in the north, banco grafted onto steel, orange circuit up every rib. The Choir works in the Throat, its sealed recording hall. <b>Lives:</b> Wardens, Choir engineers, the Sanctuary's Readers nearby. <b>Play:</b> the Act I climax, the disruptor, the fight with Marshal Vohl.</p></div>
   </div>
   <div class="card"><h4>The Well of Sankoré</h4><p><span class="tag green">KRF headquarters</span> <span class="tag">beneath the precinct</span></p><p>A Bright Decades cistern dug under the teaching houses, reached through a bakery cellar, a dry well shaft and two Foggara spurs. Inside: the war table cut from Sankoré sandstone, bunk galleries along the old waterline, a griot chamber where unscanned originals are kept in cedar chests, and reserve cells that hum on Amadou's hidden lines. It is the player's home base: rest, upgrades, briefings and the slow return of allies as the campaign goes on.</p></div>
-  <div class="callout cyan"><span class="label">Design note · density</span><p>The old city is the tightest space in the open world. Sightlines rarely exceed forty metres at street level, so snipers own the roofs and the spires own the sky. After liberation the same streets reopen as a friendly hub, with music back in the alleys and doors that were locked now standing open.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="I" data-part-title="Part I · The World Before" data-tab="I · World" data-title="Gazetteer II: J-Sector and Kabara" data-chapter="Gazetteer · J-Sector">
   <div class="ch-head"><span class="kicker">Gazetteer · J-Sector</span><h2 class="ch-title">J-Sector and Kabara</h2>
@@ -1478,8 +1497,7 @@ body.readall #pages{overflow:visible}
     <p><span class="speaker">Low Shore, Kabara, after curfew</span>Mama Habibatou Touré set the bowl between them and did not ask Awa's name. Rice, a piece of smoked fish, a spoon of red sauce. Awa ate with her right hand and her left kept the rifle strap across her knee. The brazier ticked. Habibatou poured the first glass so high the foam stood up like a cap.</p>
     <p>"Bitter," she said. "Drink it anyway." The second came strong enough to make Awa's eyes water. By the third, Ferrymen were sitting in the dark around them, and one had a message from upstream. "Now," said Habibatou, "you may tell me who you are."</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note · sharing a meal</span><p>Accepting food is a rest action that restores stamina and opens rumours; bringing food raises standing with the household. Refusing tea before the third glass costs a little reputation. In Faya, being seen eating with a family puts that family on the Lector's list.</p></div>
-</section>
+  </section>
 <!-- ===== 02-powers.html ===== -->
 <section class="page part-opener" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="Part II: The Powers" data-chapter="Part II">
   <span class="num">PART II</span>
@@ -1505,8 +1523,7 @@ body.readall #pages{overflow:visible}
     </ul>
   </div>
   <div class="callout"><span class="label">Lore note · Power by the hour</span><p>Since the Grid Famine of 2139, electricity in J-Sector is sold in hourly blocks called <i>lamps</i>. A family pays for three lamps an evening, or two and saves for water. Meters glow cyan while credit remains and click to red a minute before cut-off. Children learn to read the meter before they learn to read their names.</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Power is a visible, local resource in J-Sector districts. Sabotaging a substation darkens a block: enemy turrets drop offline, but so do the homes around them, and civilian reputation falls unless the player restores the feed afterwards.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="Chairman Lassana Vey" data-chapter="Chapter 6 · J-Sector">
   <div class="ch-head"><span class="kicker">Dossier · Final Antagonist</span><h2 class="ch-title">Chairman Lassana Vey</h2>
@@ -1532,8 +1549,7 @@ body.readall #pages{overflow:visible}
   <h3>Beliefs</h3>
   <p>Vey is no sadist. He believes people are frightened animals who need to be managed, and that democracy is a luxury paid for by stable grids. He sees himself as the last adult in a burning house. Faya disgusts him and MLI-Z bores him. The KRF he considers sentimental, and the only faction that truly threatens him, because it offers people something he cannot meter: the belief that they can govern themselves.</p>
   <div class="pull">"Your father wanted the people to choose. I let them choose every evening: light, or water. You would be amazed how quickly they stop asking for a vote."<cite>Lassana Vey, to Khalil</cite></div>
-  <div class="callout cyan"><span class="label">Gameplay role</span><p>Vey is present from the Prologue as a voice: public broadcasts, billing notices, a polite message on the screen of a dead meter. The player never fights him until the Siege of Timbuktu. His final encounter is a multi-phase assault on the Citadel's command floor, where Vey fights through the building itself: rerouting turrets, sealing bulkheads and venting coolant, while the Kirina Core destabilises below.</p></div>
-  <details class="spoiler"><summary>Spoiler: what Vey holds</summary><p>Vey has held Dr. Amadou in the Azure Citadel since the Prologue. He wants the Kirina Core, and Amadou is the only living person who can unlock it.</p></details>
+    <details class="spoiler"><summary>Spoiler: what Vey holds</summary><p>Vey has held Dr. Amadou in the Azure Citadel since the Prologue. He wants the Kirina Core, and Amadou is the only living person who can unlock it.</p></details>
 </section>
 
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="The Azure Syndicate" data-chapter="Chapter 6 · J-Sector">
@@ -1576,8 +1592,7 @@ body.readall #pages{overflow:visible}
   </div>
   <h3>Gameplay feel</h3>
   <p>J-Sector is where the game's gunplay is loudest. Fights happen in tight industrial spaces: conveyor halls, pipe galleries, loading yards. Concrete cover chips and collapses under rotary fire, conduits spark and detonate when shot, and steel doors buckle when Khalil breaches them. Enforcers advance through walls. Every weapon kicks hard, and every hit on armour rings.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>Stealth is possible in J-Sector but brittle: turrets and drones cover most approaches. The district rewards preparation, such as cutting a substation, hijacking a turret or taking the Foggara entrance, over improvisation.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="Faya: The Codified Word" data-chapter="Chapter 7 · Faya">
   <div class="ch-head"><span class="kicker">Chapter 7</span><h2 class="ch-title">Faya: The Codified Word</h2>
@@ -1613,8 +1628,7 @@ body.readall #pages{overflow:visible}
     <p>The woman's hand finds the girl's shoulder and grips it. The humming stops. Up on the parapet a Warden's visor turns, pauses and turns away.</p>
     <p><span class="speaker">Awa</span> (whispering, over comms): "Did you hear that? She knows a song. Someone still taught her a song."</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Faya's oppression is shown through systems, not cutscenes: NPC routines change when spires broadcast, patrols question women walking alone, and playing recovered music from the Griot Circle draws Wardens but raises populace reputation.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="Wardens of the Spire" data-chapter="Chapter 7 · Faya">
   <div class="ch-head"><span class="kicker">Chapter 7 · Military</span><h2 class="ch-title">Wardens of the Spire</h2>
@@ -1690,8 +1704,7 @@ body.readall #pages{overflow:visible}
     <p>MLI-Z raids J-Sector water convoys and taps pipelines. It taxes caravans crossing its land. It holds hostages when it must, and it has executed collaborators. It also digs wells, runs schools in wind-tower courtyards and shares what it takes. Its fighters are tough, mobile and lightly armoured, riding sand-skiffs and armed with salvaged weapons rebuilt in the yards.</p>
   </div>
   <div class="callout"><span class="label">Lore note · Moral grey</span><p>MLI-Z is neither villain nor hero. Its anger is earned. Its methods sometimes match its enemies'. The question it poses to the player is hard: can a reunited Mali make room for people the old Mali failed, and should it have to?</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Tenzar is the one faction whose final relationship with the player is truly open. Reputation with MLI-Z rises and falls through side missions in Acts I and II, which shapes the Act III negotiation (see next page).</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="Commandant Assalan Teyr &amp; the Borderlands" data-chapter="Chapter 8 · MLI-Z">
   <div class="ch-head"><span class="kicker">Dossier &amp; Territory · MLI-Z</span><h2 class="ch-title">Commandant Assalan Teyr &amp; the Borderlands</h2>
@@ -1853,8 +1866,7 @@ body.readall #pages{overflow:visible}
     </svg>
     <figcaption>Relationships at the start of 2142. Solid red: open war. Dashed red: hostility. Dotted amber: undecided. Cyan: alliance through recruitment.</figcaption>
   </figure>
-  <div class="callout cyan"><span class="label">Design note</span><p>The map shifts with play. Liberating Faya removes a node and adds the Unveiled to the Small Banners. The Tenzar decision in Act III turns the dotted line solid one way or the other, and that choice weighs heavily on which ending the player reaches.</p></div>
-</section>
+  </section>
 <!-- ===== 02b-powers.html ===== -->
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="The Board of Nine" data-chapter="Chapter 6 · J-Sector">
   <div class="ch-head"><span class="kicker">Chapter 6 · Dossier</span><h2 class="ch-title">The Board of Nine</h2>
@@ -1932,8 +1944,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>Security layers</h4><ol><li><b>The outer wall</b> and gate turrets on the L0 terrace.</li><li><b>Credit-keyed lifts.</b> Each floor answers only to badges of the right portfolio.</li><li><b>Turret nets</b> on every landing, slaved to the City Switch.</li><li><b>Hard-light shields</b> on L20 and above.</li><li><b>The dampener crown</b>, which jams all radio inside the walls except Syndicate bands.</li></ol></div>
     <div class="card"><h4>Prisoner levels</h4><p><b>B2, the Ledger Cells</b>, hold debtors, meter-tamperers and striking smiths, about three hundred people awaiting indenture. Freeing them during the Siege raises populace standing and adds angry, unarmed bodies to the fight. <b>L11, the White Room</b>, is special custody: one prisoner, one table, a window, and Custody Officer <b>Nènè Doumbia</b>, who brings Amadou his water and has started reading his notes.</p></div>
   </div>
-  <div class="callout cyan"><span class="label">Design note · Why L11</span><p>Vey keeps Amadou nine floors below the Board room and far from the cells. He wants the old man comfortable, close and isolated. The river-fed cooling duct is the flaw: it runs from the B3 cisterns, which connect to a sealed Foggara spur, straight up past L11. It is Awa's silent route in the Siege.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="The Hierarchy of the Word" data-chapter="Chapter 7 · Faya">
   <div class="ch-head"><span class="kicker">Chapter 7 · Dossier</span><h2 class="ch-title">The Hierarchy of the Word</h2>
@@ -1988,8 +1999,7 @@ body.readall #pages{overflow:visible}
     <li>No national garrison in Tin-Zawar without the Council of Wells' consent.</li>
     <li>No Faya Lector, reformed or not, preaching in the borderlands.</li>
   </ul>
-  <div class="callout cyan"><span class="label">Design note</span><p>The two points of trust Teyr needs before committing to autonomy come from these councils. Missions that help welet Assa's farms win the Wells; missions that fight beside ag Menna's riders win the Riders. Earn both and Teyr can sign. Earn neither and ag Menna may break a ceasefire on his own.</p></div>
-  <div class="pull">"Teyr wants a treaty. I want my father's palms back. Bring me the palms and I will read your treaty."<cite>Captain Ibbo ag Menna</cite></div>
+    <div class="pull">"Teyr wants a treaty. I want my father's palms back. Bring me the palms and I will read your treaty."<cite>Captain Ibbo ag Menna</cite></div>
 </section>
 
 <section class="page" data-part="II" data-part-title="Part II · The Powers" data-tab="II · Powers" data-title="Cells of the Front" data-chapter="Chapter 9 · The KRF">
@@ -2123,8 +2133,7 @@ body.readall #pages{overflow:visible}
     <tr><td>Grounding Palm</td><td>Arm absorbs an electric hit and vents it into the floor</td><td>25 s</td></tr>
     <tr><td>Dune Walk</td><td>Silent movement on sand; reduces drone detection</td><td>Passive</td></tr>
   </table></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The cyber-arm also acts as Khalil's interface: it reads the grid bypass keys, scans tether anchor points and powers Anvil Grip. Its heat gauge is shared between Grounding Palm and Node Overload, so players choose between defence and destruction in a fight.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="Awa: Ghost of the Sahel" data-chapter="Chapter 12 · Awa">
   <div class="ch-head"><span class="kicker">Chapter 12</span><h2 class="ch-title">Awa: Ghost of the Sahel</h2>
@@ -2210,8 +2219,7 @@ body.readall #pages{overflow:visible}
   <p>A short, heavy blade like a machete, its edge held at a red-hot energy state. Awa uses it for silent takedowns and for cutting through cables, tents and thin plating. It is fast and brutal at close range and useless beyond it.</p>
   <h3>The backpack rifle</h3>
   <p>Folded low on her back, the anti-materiel rifle snaps open in two seconds. It punches through engine blocks, turret housings and Warden shields. Each shot is loud, so a fired round ends stealth for the area unless she has tagged and isolated the target first.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>Awa's loop is to observe, tag, isolate and then strike once. The Fly Mark and rifle combo is her strongest play; the Data-surge sets up Khalil's breaches. Playing her loud is possible, but her low durability makes it punishing.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="Dusé: Hacker of the Shadows" data-chapter="Chapter 13 · Dusé">
   <div class="ch-head"><span class="kicker">Chapter 13</span><h2 class="ch-title">Dusé: Hacker of the Shadows</h2>
@@ -2239,8 +2247,7 @@ body.readall #pages{overflow:visible}
   <p class="lede">Nobody finds Dusé. Dusé finds the cracks.</p></div>
   <h3>Hidden relays</h3>
   <p>Dusé never connects from one place twice. His signal hops through dozens of relays hidden across the city: a dead Bright Decades weather buoy on a Niger sandbank, a solar lamp post in the Textile Weaving Cluster, a Ferryman's pirogue radio, an abandoned lattice node under a floating bastion. Each relay is a small physical object. When the Syndicate traces one and burns it, Dusé loses that path and has to route around it. The relays are also why nobody has seen him: a man who never sits at the same terminal leaves no face on any camera.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>Relays are collectible map objects. Each one the player finds and protects extends Dusé's reach in that district: more turrets he can subvert, faster hack times. When the Syndicate raids a relay, players can defend it or let it fall. This ties Dusé's power to the open world. After Interlude II he plays in person, but relays still matter: they carry his hacks and his Ascension beyond line of sight.</p></div>
-  <h3>Abilities</h3>
+    <h3>Abilities</h3>
   <div class="tablewrap"><table class="codex">
     <tr><th>Ability</th><th>Effect</th><th>Recharge</th></tr>
     <tr><td>Turret Subversion</td><td>Turns a Syndicate sentry turret against its owners for 20 s</td><td>60 s</td></tr>
@@ -2362,8 +2369,7 @@ body.readall #pages{overflow:visible}
       <p>Master of the salt caravan from Taoudenni: three hundred camels, a fleet of patched sand-skiffs and forty years crossing the Erg of Echoes. Amastan knew Khalil's mother and greets Khalil in Tamasheq. He is neutral by trade and will only commit to the KRF if the player proves the resistance will leave the caravan routes open to everyone.</p>
     </div>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Each supporting character anchors a reputation track on the Accord meter. Their personal side missions are the main way to raise standing with their group, and each has at least one scene where helping them costs the main mission something.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="Bonds of Blood and Wind" data-chapter="Chapter 14 · Bonds">
   <div class="ch-head"><span class="kicker">Chapter 14 · Relationships</span><h2 class="ch-title">Bonds of Blood and Wind</h2>
@@ -2421,8 +2427,7 @@ body.readall #pages{overflow:visible}
   </div>
   <h4>22:10 · The workshop</h4>
   <p>Awa recalibrates his left arm, which has been clicking at the elbow for a week. She tells him he has been punching walls again. He tells her the walls started it. She tightens a servo harder than she needs to, and he laughs for the first time that day.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>This day can be played as an optional memory sequence unlocked in Act II, when Khalil learns his father is alive. It teaches nothing new. Its purpose is to show what the Vanishing took. The sensor stake also pays off: in the Prologue the quartermaster says Amadou asked about the Sun Steles of the east rim, and players who remember Khalil's sketch can find the stake's twin in the Bubble's records.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="Awa: The Griot's Apprentice" data-chapter="Chapter 12 · Awa">
   <div class="ch-head"><span class="kicker">Chapter 12 · Vignette</span><h2 class="ch-title">Awa: The Griot's Apprentice</h2>
@@ -2545,8 +2550,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>Dusé</h4><p>"Turret's mine. Say thank you."<br>"Cameras looped. You have four minutes."<br>"Cousin Ghost, that was very loud."</p></div>
     <div class="card"><h4>Enemies</h4><p><b>Warden:</b> "Decree Twelve! Kneel!"<br><b>Syndicate:</b> "Contact, sector seven. Logging."<br><b>MLI-Z raider:</b> "Skiffs left! Take the ridge!"</p></div>
   </div>
-  <div class="callout cyan"><span class="label">Session notes</span><p>Wardens record their call-and-response lines as a group, never layered from one actor. Syndicate troopers use clipped corporate English and read alert codes like stock prices. Bambara and Tamasheq lines are checked by native-speaker consultants on the floor during every session, and actors may rewrite any line that sounds translated.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="Character Arcs at a Glance" data-chapter="Summary · Arcs">
   <div class="ch-head"><span class="kicker">Summary · Arcs</span><h2 class="ch-title">Character Arcs at a Glance</h2>
@@ -2589,8 +2593,7 @@ body.readall #pages{overflow:visible}
     <tr><td><b>The Silent Wind</b></td><td>Leads the scatter into the Foggara with the war table's map in her head, and leaves one pebble on the table for the man still in the Citadel.</td></tr>
   </table></div>
   <div class="pull">"I've watched a promise start a war. I'd like to watch one end one."<cite>Colonel Mariam Diarra</cite></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Diarra is how the hidden Iron tally becomes audible. As it rises, her briefings grow warmer toward the player: she praises speed, stops asking about prisoners, and calls the cousins "Colonel" in jest. Her approval is the warning. Write her as a good officer throughout, including in the Iron Peace, where she believes she is keeping the city safe.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="Nana Kadia and Sira" data-chapter="Dossier · Kadia &amp; Sira">
   <div class="ch-head"><span class="kicker">Dossier · Griot Circle</span><h2 class="ch-title">Nana Kadia and Sira</h2>
@@ -2623,8 +2626,7 @@ body.readall #pages{overflow:visible}
     <p><span class="speaker">Sira</span> The song says left. The water says right.</p>
     <p><span class="speaker">Nana Kadia</span> Then the song is old and the water is young. Sing what the water says, child. I will learn it from you.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Sira is audio wayfinding. In her Foggara sequences the HUD marker is off by default and the route is sung half a verse ahead, mixed so the player can follow by ear; subtitles and an optional arrow keep it accessible. Kadia's songs unlock Echo datastreams on Griot reputation, and after the Siege she sings the names of the dead at the Well, one verse per name, which the game plays in full and never skips.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="Moussa and the Lantern Children" data-chapter="Dossier · Lantern Children">
   <div class="ch-head"><span class="kicker">Dossier · Lantern Children</span><h2 class="ch-title">Moussa and the Lantern Children</h2>
@@ -2654,8 +2656,7 @@ body.readall #pages{overflow:visible}
     <li><b>Aftermath, not violence.</b> Oumou's loss is told in one sentence, a chalk flame with no second flame, an empty bedroll and her name in Kadia's song. No child's body is modelled anywhere in the game.</li>
     <li><b>Systems carry the cost.</b> Using Lantern lookouts makes missions easier and raises the "picked up" count on the tally, which the player sees each time they visit Moussa.</li>
   </ul>
-  <div class="callout cyan"><span class="label">Design note</span><p>Write the children as competent, funny and proud of their work. Their peril should be felt in what adults choose, never watched. The sensitivity panel reviews every Lantern scene at the vertical slice.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="III" data-part-title="Part III · The Operatives" data-tab="III · Operatives" data-title="The People of Reunification" data-chapter="Dossier · Reunification">
   <div class="ch-head"><span class="kicker">Dossier · Reunification</span><h2 class="ch-title">The People of Reunification</h2>
@@ -2686,8 +2687,7 @@ body.readall #pages{overflow:visible}
       <p><i>"Every core in that hall has a meter. I'm the one who lies to it."</i></p>
     </div>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Each of the four stands for one thread of reunification: the signal, the workers, the state and the defector. Ténin is fixed on the canonical Gamma path, and her goggles hang beside Sergeant Traoré's rifle in the Interlude II roll call. Kankou and Daouda depend on player choices, and Berthé appears only after Gamma. A player who gets all four to the Siege has, in miniature, the coalition the Reunification ending needs.</p></div>
-</section>
+  </section>
 <!-- ===== 04-campaign-a.html ===== -->
 <section class="page part-opener" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Part IV: The Sahara Rebellion" data-chapter="Part IV · Campaign">
   <span class="num">PART IV</span>
@@ -2775,8 +2775,7 @@ body.readall #pages{overflow:visible}
   </figure>
   <h3>How branching works</h3>
   <p>The campaign opens in a single place, the Well of Sankoré, and widens fast. After the Prologue the player can walk anywhere in the open city, and the clues they chase decide which factions they meet first. A player who follows the river informants will know the Ferrymen of Kabara before they ever see a Warden. A player who hacks Sun Steles will meet the Griot Circle early. The main story beats sit in fixed order, but the road between them belongs to the player.</p>
-  <div class="callout cyan"><span class="label">Design note · exclusive choices</span><p>At every fork on this chart the player takes one road and the others close for that playthrough. There is no "do all three" option. The Drawer gives a phone and costs stealth. The Foggara gives quiet and costs the phone. Alpha, Beta and Gamma each win something different and each can go wrong in its own way. The game keeps a ledger of these costs, and the endings read it.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Prologue: The Vanishing" data-chapter="Prologue · The Vanishing">
   <div class="ch-head"><span class="kicker">Prologue</span><h2 class="ch-title">The Vanishing</h2>
@@ -2803,8 +2802,7 @@ body.readall #pages{overflow:visible}
   <p class="drop-cap">The vault is the tutorial, and it is built so that no one tells the player what to do. Diarra leaves, the camera loosens, and the room waits. The wiped slate, the pale rectangle on the wall and the niche under the cot each hold a lesson. The player can take them in any order.</p>
   <h3>Echo Sight, first contact</h3>
   <p>When Khalil raises his left hand to the wall, his cybernetic arm reads the circuitry buried in the banco. The screen fades to sepia and the <b>Echo Layer</b> rises: ghost-light outlines of the vault as it looked an hour, a week, a century ago. Echo Sight replays heat traces and data residue as faint silhouettes. Here the player sees Amadou pacing, unpinning his map, rolling it, and pressing his palm to the same wall to wipe the slate. The ghost stops and looks straight at the camera before the trace dissolves. It is the first image of the father the player sees, and it is a recording.</p>
-  <div class="callout cyan"><span class="label">Design note · teaching by doing</span><p>The Echo tutorial has no text prompts beyond a single button glyph. Glowing seams in the clay pull the eye. If the player ignores them for ninety seconds, Awa says, "The walls in this city talk if you ask nicely." That is the only hint.</p></div>
-  <h3>Three kinds of clue</h3>
+    <h3>Three kinds of clue</h3>
   <div class="tablewrap"><table class="codex">
     <tr><th>Clue type</th><th>How it plays</th><th>In the vault</th><th>Yield</th></tr>
     <tr><td><span class="tag cyan">Environmental hack</span><br>(primary)</td><td>Echo Sight on walls, Sun Steles, meters and spires. Trace current, replay ghosts, pull deleted logs.</td><td>The wiped slate still holds a power-draw log: Amadou charged a sand-skiff battery to full at 21:40.</td><td>Hard data: times, routes, coordinates</td></tr>
@@ -2861,8 +2859,7 @@ body.readall #pages{overflow:visible}
     <p>The room fills with scholars of the sixteenth century in white boubous, sitting cross-legged around their teachers. Copyists bend over leather-bound folios. A boy grinds charcoal for ink. Somewhere a voice recites a treatise on astronomy, another argues a point of law, and a third counts the price of salt in a merchant's ledger. The shelves rebuild themselves out of light, rank on rank, a library that once held more books than the cities that conquered it.</p>
     <p><span class="speaker">Awa</span> stands very still. "They burned this," she says. "In the north, last month. This exact one."</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Echo reconstructions are walkable. Every ghost-scholar can be listened to, and a few carry lore fragments that feed the Griot Circle's reputation track. This is the first time the player sees what the war is about.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="What the Bubble Kept" data-chapter="Act I · The Spires">
   <div class="ch-head"><span class="kicker">Act I · Chapter 2</span><h2 class="ch-title">What the Bubble Kept</h2>
@@ -2898,8 +2895,7 @@ body.readall #pages{overflow:visible}
     <p>"Moussa's," Awa whispers. "One of the Lantern kids." The boy sees them, decides they're no danger, and runs.</p>
   </div>
   <div class="callout"><span class="label">Lore note · life under the Word</span><p>In the Faya Sector women may not walk without a male escort after the noon broadcast, girls are pulled from school at twelve, and music, mud-cloth and secular books are banned. Children are drafted as "listeners" who report on their families. The Wardens rarely shout. Order here is kept by silence and by people learning to watch one another.</p></div>
-  <div class="callout cyan"><span class="label">Design note · the despair beat</span><p>The first hour in Faya has almost no combat. The player is given a disguise system (plain turban, covered gear, slow walk) and must hold it while watching a system of control they cannot yet stop: the washed murals, the escort rule, the children drafted as listeners. Harm to civilians is never staged; it reaches the player as aftermath and testimony. Breaking cover too early is allowed and brutal: a full Warden response with no way to win it. The anger is meant to build so that every later mission in the sector feels earned.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Missions of the Spire Quarter" data-chapter="Act I · The Spires">
   <div class="ch-head"><span class="kicker">Act I · Chapter 4</span><h2 class="ch-title">Missions of the Spire Quarter</h2>
@@ -2956,8 +2952,7 @@ body.readall #pages{overflow:visible}
     <p>The second wave is unpowered and angry. They come with blades and sidearms, and the cousins put their backs together in the middle of the square. Red sword, blue spear. Awa cuts low and Khalil strikes high, and every time one of them turns the other is already there. A Warden's rifle butt cracks against Khalil's metal forearm. He keeps the arm up, takes the blow, and puts the spear through the man's shoulder. Awa spins under a blade, opens a cloth wrap to the plate beneath and finishes it.</p>
     <p>Then the last of them backs away. Above the square, the great door of the Spire opens, and a single heavy footstep rings on the stair.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note · combat feel</span><p>This is the first true set piece. Cover crumbles in layers, banco first, then the timber frames inside. The shield collapse is a mid-fight state change: Warden armour loses its charge bar and becomes deformable. Frozen heavies become cover. The back-to-back finale locks both cousins on screen as a co-op duel, swapping control on a single button for tag-team combos.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Boss: Marshal Kessar Vohl" data-chapter="Act I · The Spires">
   <div class="ch-head"><span class="kicker">Act I · Boss</span><h2 class="ch-title">Marshal Kessar Vohl</h2>
@@ -3006,8 +3001,7 @@ body.readall #pages{overflow:visible}
     <tr><td><b>Syndicate alert</b></td><td><span class="tag red">HIGH</span></td><td><span class="tag green">LOW</span></td></tr>
     <tr><td><b>What's lost</b></td><td>Surprise: the docks are watched from the first step</td><td>Amadou's phone stays in the drawer, with its coordinates and Dusé's handle</td></tr>
   </table></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Both roads lead into Act II in J-Sector. The difference is how it opens: the Drawer starts loud with a ready contact, while the Foggara starts quiet with a guide but no line to Dusé. Neither is the right answer.</p></div>
-  <div class="vignette"><p><span class="speaker">Awa</span> turns the brass key over in her fingers. To the south, past the dead spires, the stacks of J-Sector glow cyan against the dark. "He went that way," she says. "Everything goes that way, in the end."</p></div>
+    <div class="vignette"><p><span class="speaker">Awa</span> turns the brass key over in her fingers. To the south, past the dead spires, the stacks of J-Sector glow cyan against the dark. "He went that way," she says. "Everything goes that way, in the end."</p></div>
 </section>
 <!-- ===== 04b-interlude.html ===== -->
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Interlude I: The Open Road" data-chapter="Interlude I · The Open Road">
@@ -3030,8 +3024,7 @@ body.readall #pages{overflow:visible}
     <tr><td>Azure Syndicate</td><td>Raises its guard and its prices</td><td>Hour-tokens cost double near the old market; drone patrols along the river</td></tr>
     <tr><td>MLI-Z</td><td>Watches and says nothing</td><td>Tenzar riders on the dune crests at dusk. They never come closer.</td></tr>
   </table></div>
-  <div class="callout cyan"><span class="label">Design note · the interlude contract</span><p>Every questline here is optional and every one feeds a meter the endings read. Nothing is lost by skipping them, except allies. The Siege of Timbuktu checks Azalai, Ferrymen, Griot and Unveiled reputation, and the cheapest place to earn it is now, while the Syndicate is still looking north.</p></div>
-  <div class="callout red"><span class="label">Cost</span><p>Time is not free. Each in-game week the player spends in the interlude adds one Last Verse cell to the Faya alleys, and the Syndicate's river patrols grow heavier. On the Foggara path this does not change the Act II alert state, but it does put one extra drone over the Kabara intake.</p></div>
+    <div class="callout red"><span class="label">Cost</span><p>Time is not free. Each in-game week the player spends in the interlude adds one Last Verse cell to the Faya alleys, and the Syndicate's river patrols grow heavier. On the Foggara path this does not change the Act II alert state, but it does put one extra drone over the Kabara intake.</p></div>
 </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Side Quest: The Reading Room of Ash" data-chapter="Interlude I · The Open Road">
@@ -3080,8 +3073,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>The anchor Stele</h4><p>A buried Sun Stele lies halfway along the route. Waking it with a salvaged cell holds the sand still for one night. Awa must dig and rune-weave under a time limit.</p></div>
     <div class="card"><h4>The ghost caravan</h4><p>At the Stele, Echo Sight shows a fourteenth-century camel train. Following its line gives the safest path. Losing it in the dark means a dead end and a dawn dig-out.</p></div>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The Salt Road is the Erg tutorial. Every rule the player needs for the Act III crossing to Kirina Deep is taught here at a small scale with low stakes. The same wind grammar and the same Stele anchors return later on a map four times the size.</p></div>
-  <h3>The pump station (choose one)</h3>
+    <h3>The pump station (choose one)</h3>
   <div class="tablewrap"><table class="codex">
     <tr><th>Option</th><th>How it plays</th><th>Outcome</th></tr>
     <tr><td><span class="tag">Pay the toll</span></td><td>Hand over a quarter of the salt. The drone logs the caravan.</td><td>Safe. Amastan is bitter. <span class="tag green">Azalai +</span></td></tr>
@@ -3139,8 +3131,7 @@ body.readall #pages{overflow:visible}
     <p>Forty-two manuscripts are hidden across the open map: in clay jars sealed into walls, under the floors of family houses, in a sunken pirogue, inside a Syndicate archive crate. Each hunt starts from an Echo clue. A ghost-scholar looks toward a wall, a merchant's ledger names a house, a copyist hums the first line of a poem the player must find.</p>
     <p>Returned manuscripts go to the reading room in the Faya Sector, if it was rebuilt, or to the Well of Sankoré if not. Every ten returns raise Griot reputation one step and unlock a song that Nana Kadia sings at the Well. Some carry practical rewards: a forgotten Foggara branch, an old water right that shames the Syndicate, a Bogolan motif that upgrades Awa's runes.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The history in the Echo is presented with care. Ghost-figures speak and act in period, and the game credits real scholars and traditions by name. The point is that this city was a centre of learning long before anyone wired it, and the people fighting for it are its heirs.</p></div>
-  <div class="callout green"><span class="label">Completion reward</span><p>Tuning every site plays the Fracture night in full and unlocks <i>The Song of Kirina</i> in the Echo, sung by Nana Kadia over the ghost of the old empire. In the Siege, it is the song the Griot column sings through the Foggara.</p></div>
+    <div class="callout green"><span class="label">Completion reward</span><p>Tuning every site plays the Fracture night in full and unlocks <i>The Song of Kirina</i> in the Echo, sung by Nana Kadia over the ghost of the old empire. In the Siege, it is the song the Griot column sings through the Foggara.</p></div>
 </section>
 <!-- ===== 05a-campaign-b.html ===== -->
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Act II: The Grid" data-chapter="Act II · The Grid">
@@ -3166,8 +3157,7 @@ body.readall #pages{overflow:visible}
   </div>
   <h3>First impressions: the Craft &amp; Data Quarter</h3>
   <p>J-Sector is built on the bones of a working city. The banco walls of the old artisan quarters are still there, buttressed with steel and threaded with cyan data lines that pulse when payment clears. In the <b>Textile Weaving Cluster</b>, women work looms wired to quota counters; the cloth leaves the quarter faster than they can sell it. In the <b>Traditional Metalwork District</b>, smiths hammer Syndicate armour plates under contract and are paid in hour-tokens: one token, one hour of electricity at home. Water runs in open channels behind locked grilles. You can hear it and you cannot drink it.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>J-Sector's first hour is a tone shift. After the oppressive alleys of Faya, the player meets a place that looks prosperous. Echo Sight is the corrective: scanning a loom or a meter reveals the old guild records underneath, the fair prices the quarter once set for itself, and how far the present has fallen from them.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Act II: A Voice in the Wires" data-chapter="Act II · The Grid">
   <div class="ch-head"><span class="kicker">Act II · Meeting Dusé</span><h2 class="ch-title">A Voice in the Wires</h2>
@@ -3196,8 +3186,7 @@ body.readall #pages{overflow:visible}
       </ul></div>
   </div>
   <div class="callout purple"><span class="label">Dusé's channel</span><p>"I am not your soldier. I am a key. Keys open doors for whoever holds them, so be careful what you hold me for."</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Dusé's trust is tracked separately from the faction meters. Drawer players start at <b>Wary</b> (the relay handle proves a connection but also that Amadou's phone could be compromised). Foggara players start at <b>Curious</b> (one step higher), since they arrived unseen. Breaking the "people first" promise later in the campaign drops Dusé to <b>Withdrawn</b>, which closes certain support options in the Siege.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Act II: The First Strike" data-chapter="Act II · The Grid">
   <div class="ch-head"><span class="kicker">Act II · The Exclusive Choice</span><h2 class="ch-title">The First Strike</h2>
@@ -3214,8 +3203,7 @@ body.readall #pages{overflow:visible}
     <tr><td><b>Shapes endings</b></td><td>Pushes toward Reunification via the populace</td><td>Pushes toward the Iron Peace if used carelessly</td><td>Critical path to Reunification</td></tr>
   </table></div>
   <div class="callout red"><span class="label">Risk &amp; consequence</span><p>Starting alert matters. On the <b>Drawer</b> path the Syndicate is already at HIGH alert, so Alpha's firewalls are more sensitive and Gamma's sentries begin closer to the tower. On the <b>Foggara</b> path, the LOW alert gives every strike a quieter opening. Players who took the riskier overland path are not punished arbitrarily; they hold the phone, and the phone's coordinates give them one extra entry point on each mission.</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>There is no "correct" first strike. Each is tuned so that a player who commits fully and plays it well reaches the Reunification ending. What changes is the route, the allies, and which scars the city carries into Act III.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Strategy Alpha: Central Data Heist" data-chapter="Act II · First Strike">
   <div class="ch-head"><span class="kicker">Mission File · Alpha</span><h2 class="ch-title">Central Data Heist</h2>
@@ -3271,8 +3259,7 @@ body.readall #pages{overflow:visible}
     <li>Colonel Diarra's forces are rated <b>siege-ready</b>, which unlocks the frontal assault phase in Act III.</li>
     <li>Populace reaction is split. Some celebrate armed resistance. Others fear what an armed KRF will do next, and the hidden <b>Iron tally</b> rises by one.</li>
   </ul>
-  <div class="callout cyan"><span class="label">Design note</span><p>Beta is the loudest and most immediately satisfying strike, and it should feel heavy: haulers that rock under hits, cargo crates that splinter, canyon dust that hangs for a full minute. Its quieter cost lands later, when the player sees which allies trust them less.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Strategy Gamma: Broadcast Tower Sabotage" data-chapter="Act II · First Strike">
   <div class="ch-head"><span class="kicker">Mission File · Gamma · Critical</span><h2 class="ch-title">Broadcast Tower Sabotage</h2>
@@ -3361,8 +3348,7 @@ body.readall #pages{overflow:visible}
     <tr><td>4 · Core gallery</td><td>Narrow, hot, magnetic</td><td>Shielded troopers, drone swarm</td><td>Magnetic cradles pull at the spear's tether; vent the coolant or the room heats every 30 seconds</td></tr>
     <tr><td>5 · Hold the lift</td><td>Control room &amp; cargo lift</td><td>Two Enforcers, reinforcement waves</td><td>Dusé hijacks a turret; doors buckle inward under Enforcer fire; the lift is the only way out with the core</td></tr>
   </table></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Weight first. Recoil kicks hard, armour plates on troopers deform and fall away with hits, and cover is a resource that runs out. The Hall should leave the player physically tense. Signature combo: Dusé hijacks a turret, Awa takes the vent shot, Khalil breaches. Done right, it fells an Enforcer in seconds; done late, the room tears itself apart around the team.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="The Prisoner of the Citadel" data-chapter="Act II · Revelation">
   <div class="ch-head"><span class="kicker">Act II · Finale</span><h2 class="ch-title">The Prisoner of the Citadel</h2>
@@ -3404,8 +3390,7 @@ body.readall #pages{overflow:visible}
   <h3>Who knows about Amadou</h3>
   <p>Diarra hears it from the cousins in her office with the door shut, and orders it kept inside the command circle. The player decides whether to obey. Telling Nana Kadia brings the Griot Circle to the Well in force. Telling Moussa means the whole city knows by evening. A city that knows its founder is alive in the Citadel is angrier and braver (<b>Populace +10</b>), and Vey learns the KRF knows, which moves his dig teams faster (<b>race clock +1</b>).</p>
   <div class="callout red"><span class="label">If the Citadel run failed</span><p>The north is dark again, the stolen core is gone, and the city blames the KRF as much as Vey. Interlude II plays the same, with two changes: KRF and Populace start lower, and Diarra's first coalition order is to get the clinic generators back by any means, which adds a short fuel-raid mission before anything else.</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The interlude has a clock. Vey's dig teams are already moving toward Kirina Deep, and the race bar shown in Act III starts filling here. Each coalition mission advances it by one notch. The player cannot recruit everyone and also arrive at the dig first, and the game says so at the war table.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Building the Coalition" data-chapter="Interlude II · The Gathering Storm">
   <div class="ch-head"><span class="kicker">Interlude II · The War Table</span><h2 class="ch-title">Building the Coalition</h2>
@@ -3463,8 +3448,7 @@ body.readall #pages{overflow:visible}
   <div class="vignette"><p>The sentry on the ramp calls down that a man is asking for the cousins by their nicknames. He comes into the lamplight slowly, hands open. About thirty, short-cropped hair, built like someone who climbs for a living. Geometric tattoos band his upper arms below a sleeveless vest woven in indigo, red and green. Olive cargo trousers, boots worn grey at the toes, a compact sidearm he makes a point of not touching. In his hand, a translucent data tablet with a violet glyph pulsing in the corner.</p>
   <p><span class="speaker">Dusé</span> "Spear. Cousin Ghost." <i>He looks around the vault, at the lamps, at Diarra's hand on her holster.</i> "It's smaller than I pictured."</p>
   <p><span class="speaker">Awa</span> "You sounded taller."</p></div>
-  <div class="callout cyan"><span class="label">Design note · the reveal</span><p>This is the first time the player sees Dusé's face, and the camera holds on it. Every earlier scene keeps him off-screen: no silhouettes, no reflections, no "mysterious figure" shots. The voice is already familiar. The face is the only new thing, so the scene gives it time. When the questline ends he stays: from here to the end of the campaign Dusé is the third hero in the swap.</p></div>
-  <h3>The past</h3>
+    <h3>The past</h3>
   <p>Before he was Dusé, he was a junior contractor on the dampener network. He wrote the scheduler that decides when the neural sleep-signal runs and over which district. He left after the first test night over <b>Saddlers' Row</b>, when an old man fell asleep at the wheel of a water truck. He has spent eleven years trying to pay that back. Cissé has the commit logs, and his old name is on every one of them.</p>
   <h3>Objectives</h3>
   <ol>
@@ -3501,8 +3485,7 @@ body.readall #pages{overflow:visible}
   <p><span class="speaker">Nana Kadia</span> "Sundiata was a boy who could not walk. They forget that part. Everyone wants the battle. The song is about the years before it."</p>
   <p><span class="speaker">Khalil</span> "Are we in the years before it?"</p>
   <p><span class="speaker">Nana Kadia</span> "Child, you are in the verse where everyone thinks it is already lost."</p></div>
-  <div class="callout cyan"><span class="label">Design note · roll call</span><p>Characters who died earlier are present as absences: an empty bedroll, a name chalked on the wall by the Lantern Children, Sergeant Bourama Traoré's rifle hanging unclaimed if he fell at the dampener spire. Recruited groups fill the vaults with their own people and their own music. A player who recruited little hears a quiet Well. That quiet is the warning.</p></div>
-  <div class="pull">"Tomorrow we go out into the wind. Tonight, eat. The desert doesn't care how brave you are on an empty stomach."<cite>Colonel Mariam Diarra</cite></div>
+    <div class="pull">"Tomorrow we go out into the wind. Tonight, eat. The desert doesn't care how brave you are on an empty stomach."<cite>Colonel Mariam Diarra</cite></div>
 </section>
 <!-- ===== 05c-campaign-c.html ===== -->
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Act III: The Borderlands" data-chapter="Act III · The Winds">
@@ -3598,8 +3581,7 @@ body.readall #pages{overflow:visible}
   <div class="callout red"><span class="label">The final choice</span><p>Vey can be <b>arrested</b> for trial in Bamako, or <b>executed</b> on the roof. Execution is quicker, and the crowd below will cheer. It also adds to the Iron tally and drops Dusé's trust to Withdrawn.</p></div>
   <h3>Igniting the Core</h3>
   <p>On the Citadel roof, beneath the crown of dampener antennae, Amadou sets the Kirina Core into the cradle Vey built for it. Amadou speaks the key. Awa weaves it into the Bogolan pattern carved into the Core's face. Khalil drives his spear into the socket at its heart and the tether locks. The Core lights blue-white. One after another, the dampener antennae overload and go dark, and across the city every Sun Stele wakes.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>The ignition is played, not watched: three inputs, one each for Amadou, Awa and Khalil, timed to the Griot Circle's song from the street below. Ten seconds later the broadcast channel opens, and the player decides what Timbuktu's first message to Bamako will be.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Four Winds: The Endings" data-chapter="Act III · Endings">
   <div class="ch-head"><span class="kicker">The Sahara Rebellion · Endings</span><h2 class="ch-title">Four Winds</h2>
@@ -3636,8 +3618,7 @@ body.readall #pages{overflow:visible}
     <p>The square erupts. Somewhere a griot starts the old song of Kirina, the one about a broken land made whole, and the crowd takes it up. Awa laughs and wipes her eyes with the back of her augmented hand. Khalil doesn't turn around. He keeps looking south.</p>
     <p>Amadou starts to hum along. Off-key, as always.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The other endings play shorter versions of this scene on the same roof. In the Fragile Accord, Bamako's answer is formal and delayed. In the Iron Peace, Diarra speaks instead of Khalil and the square is half empty. In the Silent Wind, the roof is dark, the transmitter is a pile of scrap under a tarp, and Amadou's crate stands empty, because he is still in the Citadel. The scene is staged the same way each time so that the player sees exactly what changed.</p></div>
-  <div class="ornament"></div>
+    <div class="ornament"></div>
   <div class="pull">"The wind does not forget the shape of the land. It carried the songs of Kirina for nine hundred years. It can carry one more voice to Bamako."<cite>Nana Kadia, elder of the Griot Circle</cite></div>
 </section>
 <!-- ===== 05d-endings.html ===== -->
@@ -3656,8 +3637,7 @@ body.readall #pages{overflow:visible}
     <p><span class="speaker">Amadou</span> "A single interlocutor." <i>He laughs, not unkindly.</i> "They have met us, then."</p>
   </div>
   <p>The coda jumps four months. Khalil walks out of a Kabara print shop with a newspaper under his arm and stops in the street to read it. The headline says the reunification talks have been postponed again. Behind him the street lamps are on, and nobody is paying for them by the hour. He folds the paper, puts it in his cloak, and keeps walking.</p>
-  <div class="callout cyan"><span class="label">Design note · what the player sees changed</span><p>The roof is staged shot for shot like the Reunification epilogue so that the differences carry the story. The haze stays up and the southern horizon is never clear. The square is split into three crowds with empty ground between them; their sizes are drawn from Populace, Ferrymen and Metalwork reputation. Bamako's answer is delayed and read from paper, and the song of Kirina never starts. No Tenzar riders stand in the square; the eastern roads are closed. Dusé is in the crowd only if his trust held, and he is looking at his tablet instead of the roof. In the evening, Nana Kadia sings that "we have found the claw for two."</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Epilogue: The Iron Peace" data-chapter="Endings · The Iron Peace">
   <div class="ch-head"><span class="kicker">Epilogue · Ending III</span><h2 class="ch-title">The Iron Peace</h2>
@@ -3676,8 +3656,7 @@ body.readall #pages{overflow:visible}
     <p><span class="speaker">Awa</span> "So did he."</p>
     <p>They stand in front of the wall until the street lamps come on. Neither of them says what they are both thinking, which is that Vey said exactly this would happen.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note · an equal ending</span><p>The Iron Peace has the same length as Reunification, its own score and its own credits, and no gameplay penalty: every unlock, Ascension tier and post-game reward carries over in full. Its cost is moral, and the epilogue shows it in who stays and who leaves. Diarra, Cissé and the dampener crown stay. Berthé, Dusé and the Bogolan strip leave. The cousins stay, and the last shot gives them nothing to do but look at what they made. Nana Kadia stops before the last refrain of the Song of the Spear, and the room stays silent.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="Epilogue: The Silent Wind" data-chapter="Endings · The Silent Wind">
   <div class="ch-head"><span class="kicker">Epilogue · Ending IV</span><h2 class="ch-title">The Silent Wind</h2>
@@ -3695,8 +3674,7 @@ body.readall #pages{overflow:visible}
     <p><span class="speaker">Khalil</span> "He's teaching us again."</p>
     <p><span class="speaker">Awa</span> "Then we find the rest." It is the first thing she has said in a month. Outside, the wind turns the dunes over in the dark, the way it always has.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The Silent Wind is a fail state with a full epilogue, never a game-over screen. It plays in full before the game offers a return to the last Act III checkpoint. It is the only ending in which the rescue fails: Amadou stays in the White Room as Vey's prisoner, alive and unbroken, and the Core stays dark because he will not give the key. The ration label is the sequel hook, and its three unknown motifs are never solved in this game. Losses are told as the rest of the game tells them, in empty places and names; reputation decides who sits in the tent, and no body is shown. Dusé goes dark, and his violet glyph lights a public kiosk in the last shot if his trust held.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="IV" data-part-title="Part IV · The Sahara Rebellion" data-tab="IV · Campaign" data-title="The War with Tenzar: Teyr's Late Terms" data-chapter="Endings · The War with Tenzar">
   <div class="ch-head"><span class="kicker">Branch · Act III</span><h2 class="ch-title">Teyr's Late Terms</h2>
@@ -3739,8 +3717,7 @@ body.readall #pages{overflow:visible}
     <tr><td><b>Dir. Halima Cissé</b></td><td>Testifies against the Board</td><td>Awaits trial at Kabara</td><td>Back at her console under KRF guard</td><td>Reinstated; hunts Dusé's relays</td></tr>
     <tr><td><b>Nènè Doumbia</b></td><td>Testifies with Amadou's pages</td><td>Gives her statement to a court that never sits</td><td>Takes the pages to Bamako herself</td><td>Stays on the White Room shift and carries his letters out under the jug's lid</td></tr>
   </table></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Each slide is a painted still in the art-book style with one line of narration. Anyone who fell during the Siege gets a slide with an empty space where they stood and a single chalked flame, and is named in the Griot's lament. On the war branch, ag Menna and Teyr take their slides from the late terms on the previous page. The Unveiled, the Azalai and the Ferrymen close the sequence on a shared slide whose figures are drawn from their reputations.</p></div>
-</section>
+  </section>
 <!-- ===== 06a-systems.html ===== -->
 <section class="page part-opener" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="Part V: Systems of Play" data-chapter="Part V">
   <span class="num">PART V</span>
@@ -3789,8 +3766,7 @@ body.readall #pages{overflow:visible}
     <li><b>0:24</b> The courtyard is liberated. A transmission spire falls silent; the quarter's music returns.</li>
     <li><b>0:27</b> Rebuild: assign salvage to reopen the dyers' cistern. Next time through, the alley holds a KRF safehouse and a fast-travel shrine.</li>
   </ul>
-  <div class="callout cyan"><span class="label">Design note</span><p>No step is mandatory. A stealthy player can skip the fight entirely, and a careless one can lose the quarter after liberating it if the rebuild is neglected and the Wardens counter-attack.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="An Open World of Moving Sand" data-chapter="Chapter 15 · The Open World">
   <div class="ch-head"><span class="kicker">Chapter 15 · continued</span><h2 class="ch-title">An Open World of Moving Sand</h2>
@@ -3808,8 +3784,7 @@ body.readall #pages{overflow:visible}
   <p>East of the Borderlands the dunes move. The Erg of Echoes is a procedural dune field that re-forms after every major storm. Buried structures surface for a few in-game days and then vanish again: a caravanserai roof, a crashed Bright Decades aerostat, a ring of standing stones that only lines up with the sun at one hour. Players who learn to read wind ridges can predict where the next ruin will break the surface.</p>
   <h3>Sun Steles</h3>
   <p>The energy-harvesting monuments are puzzle objects at landscape scale. Each Stele has mirrored facets that must be rotated, cleared of sand or re-linked by spear-tether to catch the sun. A charged Stele powers nearby lattices, opens sealed doors, lights a district for the night, or overloads a Syndicate grid node if you route it wrong on purpose.</p>
-  <div class="callout cyan"><span class="label">Design note: day, night and the Harmattan</span><p>A full day lasts 48 real minutes. Daylight favours Sun Stele puzzles and long sightlines; night brings curfew patrols in Faya and lit-up J-Sector stacks. From in-game November to March the <b>Harmattan</b> blows: dust storms cut visibility to twenty metres, ground dampener signal, ground gunships, and reshape the Erg. Stealth players wait for the storm. Snipers dread it.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="The Investigation System" data-chapter="Chapter 16 · Investigation">
   <div class="ch-head"><span class="kicker">Chapter 16</span><h2 class="ch-title">The Investigation System</h2>
@@ -3893,8 +3868,7 @@ body.readall #pages{overflow:visible}
     <tr><td><b>Back to Back</b></td><td>Khalil + Awa both in melee range, swap twice in 2 s</td><td>A cinematic double takedown inspired by the Spire fight in Act I.</td></tr>
   </table></div>
   <div class="callout purple"><span class="label">Dusé's channel</span><p>"Turret's mine. Awa, the vent on the left is breathing hot. Khalil, count to three and stop knocking politely."</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Combos are discovered, then named in the journal. The game never forces them; they simply do more than the parts would alone, and enemies on higher difficulties are tuned to be beaten most cleanly by teamwork.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="The Arsenal" data-chapter="Chapter 17 · The Arsenal">
   <div class="ch-head"><span class="kicker">Chapter 17 · continued</span><h2 class="ch-title">The Arsenal</h2>
@@ -4029,8 +4003,7 @@ body.readall #pages{overflow:visible}
     <tr><td>Cloaked infiltration</td><td>Thermal sweeps, Grid Hounds</td><td>Lanterns and dust-sifting patrols</td><td>Bells on camp tripwires</td></tr>
     <tr><td>Dusé turret hijacks</td><td>Turrets with dead-man switches</td><td>(no turrets)</td><td>Turrets swapped for scrap gunners</td></tr>
   </table></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Adaptation is capped and always signposted. An intercepted order or a griot rumour tells the player what changed. A counter never closes a tactic for good: it only makes the player mix approaches, which is where team combos come in.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="Crafting, Salvage and the Market" data-chapter="Chapter 19 · Crafting">
   <div class="ch-head"><span class="kicker">Chapter 19 · Systems</span><h2 class="ch-title">Crafting, Salvage and the Market</h2>
@@ -4212,8 +4185,7 @@ body.readall #pages{overflow:visible}
   </table></div>
   <h3>Swapping while Ascended</h3>
   <p>Resonance is shared, and so is Ascension. Swapping heroes mid-form passes the orb across: the timer keeps running, but the swap itself grants 2 extra seconds once per Ascension. Expert players open as Awa, spread the Swarm Script tags, swap to Khalil and finish with Sundiata's Charge into a marked squad.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>Ultimates end Ascension early on purpose. The player trades remaining seconds for one decisive move, which keeps the form a tactical choice instead of a mode to ride out.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="V" data-part-title="Part V · Systems of Play" data-tab="V · Systems" data-title="Ghost Signal, Balance and Royale" data-chapter="Chapter 19 · Ascension">
   <div class="ch-head"><span class="kicker">Chapter 19 · Ascension</span><h2 class="ch-title">Ghost Signal, Balance and Royale</h2>
@@ -4424,8 +4396,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>The map</h4><p>About 8 km² covering the old city sectors, the Kabara river port, a slice of the Borderlands with Tin-Zawar's salvage yards, and the western edge of the Erg of Echoes. The Bubble hovers over the centre and can be reached by powered lattices.</p></div>
     <div class="card"><h4>The drop</h4><p>Squads choose an insertion vehicle: an Azalai caravan crossing from the west, a sand-skiff run from the east, or a Ferrymen pirogue up the Niger. Each moves along a route; jump off anywhere with a glide-cloak.</p></div>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Matches run 22 to 26 minutes across five storm phases. Downed players can be revived by squadmates; fully eliminated players drop a <i>wind token</i> that teammates can carry to a Griot shrine to bring them back once per match.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="VI" data-part-title="Part VI · Harmattan Royale" data-tab="VI · Royale" data-title="Operatives, Relics and Loot" data-chapter="Harmattan Royale · Loadout">
   <div class="ch-head"><span class="kicker">Harmattan Royale</span><h2 class="ch-title">Operatives, Relics and Loot</h2>
@@ -4559,8 +4530,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>Rotating: Lantern Night</h4><p>A dark map lit only by carried lanterns and burning stalls. Carry one to see, drop it to hide.</p></div>
     <div class="card"><h4>Rotating: Long Wind</h4><p>Snipers only, Wind Towers to Oasis. Bullet drop and wind drift are doubled.</p></div>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Alternate modes never award ranked points. They have their own cosmetic badges, so players can learn the map without rank pressure.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="VI" data-part-title="Part VI · Harmattan Royale" data-tab="VI · Royale" data-title="Balancing the Arsenal" data-chapter="Harmattan Royale · Balance">
   <div class="ch-head"><span class="kicker">Harmattan Royale</span><h2 class="ch-title">Balancing the Arsenal</h2>
@@ -4606,8 +4576,7 @@ body.readall #pages{overflow:visible}
 <section class="page" data-part="VII" data-part-title="Part VII · Art &amp; Production" data-tab="VII · Art" data-title="Visual Pillars" data-chapter="Chapter 20 · Visual Pillars">
   <div class="ch-head"><span class="kicker">Chapter 20</span><h2 class="ch-title">Visual Pillars</h2><p class="lede">Mud-brick first. Futurism second. The wall is still a wall.</p></div>
   <p class="drop-cap">Every frame of <i>The Winds of Kirina</i> starts from banco: hand-smoothed earth, palm-wood <i>toron</i> beams jutting from tapered walls, rounded buttresses, the soft shadows of a Sudano-Sahelian city. The future is added on top of that, and only in small amounts. A circuit line runs through the plaster like a vein. A Sun Stele hums above a courtyard. A scholar bastion floats in the haze. When a player screenshots the city, the first thing a viewer should recognise is Timbuktu.</p>
-  <div class="callout cyan"><span class="label">The toned-down cyberpunk rule</span><p>No more than about one fifth of any frame may carry emissive light, and that light must sit <i>inside</i> a traditional surface (a crack in banco, embroidery thread, a carved lintel) instead of on a floating sign or a neon tube. Purple neon skylines, holographic billboards and rain-slick streets are banned. If an image could be swapped into a generic cyberpunk game without anyone noticing, it fails review.</p></div>
-  <h3>Palette of the four powers</h3>
+    <h3>Palette of the four powers</h3>
   <div class="tablewrap"><table class="codex">
     <tr><th>Swatch</th><th>Name</th><th>Hex</th><th>Use</th></tr>
     <tr><td><span style="display:inline-block;width:26px;height:14px;background:#e8701a;border:1px solid #451a03;vertical-align:middle"></span></td><td>Faya circuit orange</td><td class="tech">#E8701A</td><td>Circuit lines in spire walls, broadcast glow, Warden visors</td></tr>
@@ -4702,8 +4671,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>The KRF palette</h4><ul><li><b>Kora</b>: the theme of memory, used for Amadou and the Letter.</li><li><b>Ngoni</b>: quick, plucked, rhythmic. Awa's stealth and exploration.</li><li><b>Tinde drums</b>: women's drumming from the desert, used for gatherings and the march to the Siege.</li><li><b>Desert-blues guitar</b>: looping electric guitar for traversal by sand-skiff and Khalil's theme.</li><li><b>Griot voice</b>: Nana Kadia's line, sung over Echo reconstructions.</li></ul></div>
     <div class="card"><h4>The enemy's sound</h4><ul><li><b>Syndicate hum</b>: a cold synthetic drone, sub-bass and filtered noise, rising with alert state. Drones and turrets share its pitch.</li><li><b>Faya's broadcast drone</b>: the spires recite the Codified Word in a flat, looped voice over a low organ-like tone. It never stops and never resolves.</li><li><b>MLI-Z</b>: wind, distant engines, sparse percussion. Neutral until the player chooses.</li></ul></div>
   </div>
-  <div class="callout cyan"><span class="label">Design note · Music is banned in Faya</span><p>Inside the Faya Sector, the score is gone. The player hears only wind, footsteps and the broadcast. Instruments found in the world are confiscated or broken. When a district is liberated, the broadcast cuts out and a single ngoni line starts from a rooftop, then drums, then voices. Each freed district adds a layer to the sector's music, so the player can hear their progress. Playing a recovered instrument at a Faya checkpoint draws Wardens: a stealth risk the player can use as a distraction.</p></div>
-  <div class="vignette"><p>The spire went quiet in the middle of a sentence. For a long moment nobody in the Market of Silence moved. Then, from somewhere above the cloth awnings, a boy started tapping a calabash. <span class="speaker">Moussa</span> grinned at Awa. "They forgot we still have hands."</p></div>
+    <div class="vignette"><p>The spire went quiet in the middle of a sentence. For a long moment nobody in the Market of Silence moved. Then, from somewhere above the cloth awnings, a boy started tapping a calabash. <span class="speaker">Moussa</span> grinned at Awa. "They forgot we still have hands."</p></div>
   <h3>Voice and language</h3>
   <p>Dialogue is recorded in English as the main track, with French and Bambara as the everyday street mix. Tamasheq is used in the Borderlands and in Khalil's exchanges with his mother's people; Songhai is heard in the markets of Timbuktu. Untranslated phrases carry subtitles. Cast West African actors for every Malian role, and record griot passages with working griots. Syndicate voices are clipped corporate English; Wardens speak in drilled call-and-response.</p>
 </section>
@@ -4753,8 +4721,7 @@ body.readall #pages{overflow:visible}
     <div class="card"><h4>MLI-Z Borderlands</h4><p>Sand-blasted on the windward side, smooth on the lee. Red earth climbs walls in a dust band up to knee height. Salvaged Syndicate plate is repainted ochre and left to flake. Wind towers wear rope lashings and torn cloth.</p></div>
     <div class="card"><h4>The Undercity &amp; the Bubble</h4><p>The Foggara is damp: mineral crust, root intrusion, moss in the light wells. The Bubble shows fifty years of neglect at altitude: glass clouded by grit, banco shelves dried and cracked, Bright Decades brass gone green.</p></div>
   </div>
-  <div class="callout cyan"><span class="label">Design note · replastering</span><p>Banco cities are maintained by the community. Every KRF-held district has scaffolding, mud mixing pits and replastered walls. A district that is being looked after again is the clearest sign that the player's work has mattered.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="VII" data-part-title="Part VII · Art &amp; Production" data-tab="VII · Art" data-title="Vehicles and Props" data-chapter="Chapter 20 · Visual Pillars">
   <div class="ch-head"><span class="kicker">Production guide</span><h2 class="ch-title">Vehicles and Props</h2><p class="lede">What moves across the sand and the river, and what the heroes carry.</p></div>
@@ -4856,8 +4823,7 @@ body.readall #pages{overflow:visible}
       <p><b>Refrain, sung by all:</b><br><i>Wind of Kirina, carry the spear.<br>What was broken, bring it here.<br>River and desert, one bright line.<br>Wind of Kirina, the land is mine.</i></p>
     </div>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>The final verse changes with the campaign. After the Fragile Accord ending, Nana Kadia sings "we have found the claw for two." After the Iron Peace, she stops before the last refrain and the room stays silent.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="VIII" data-part-title="Part VIII · Tales of the Sahel" data-tab="VIII · Tales" data-title="Broadcasts" data-chapter="Tale II · Broadcasts">
   <div class="ch-head"><span class="kicker">Tale II</span><h2 class="ch-title">Broadcasts</h2><p class="lede">Four voices on the same morning in Timbuktu, 2142. Each one is sure it is the only one listening to the truth.</p></div>
@@ -4926,8 +4892,7 @@ body.readall #pages{overflow:visible}
     <p>The Ghost found me later and wiped my face with her sleeve, which she never does. "Did you read it?" she asked. I said no, which was true, because I can't read yet. She said she would teach me. She said one day the map will be on paper and nobody will need to hide it.</p>
     <p>I said I liked it on us. She laughed. Then she drew a little flame next to mine, on the wall, with her own chalk.</p>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Moussa's story is the tutorial for the crawlspace mechanic in the Foggara. The chalk marks work as in-game wayfinding.</p></div>
-</section>
+  </section>
 <!-- ===== 08b-tales.html ===== -->
 <section class="page" data-part="VIII" data-part-title="Part VIII · Tales of the Sahel" data-tab="VIII · Tales" data-title="The Weaver's Ledger" data-chapter="Tale V · The Weaver's Ledger">
   <div class="ch-head"><span class="kicker">Tale V</span><h2 class="ch-title">The Weaver's Ledger</h2><p class="lede">An account book kept under a loom in Shed 4 of the Textile Weaving Cluster. The last entry is in a different hand.</p></div>
@@ -4969,8 +4934,7 @@ body.readall #pages{overflow:visible}
   <div class="pull">"I will not ask you to trust Bamako. I am asking whether you can afford not to make Bamako sign."<cite>Assalan Teyr, to the Council of Wells</cite></div>
   <p>Here is what I propose. We let them speak. We give them nothing for words. Every promise is paid in water first: the eastern channels, written into law, before a single rider moves. Our schools in our languages. Our riders keep their rifles until the treaty is ratified, and if Bamako breaks it, we will still have them. And if the boy promises us a country he cannot deliver, we send him home, because a man who lies to win a road will lie again to keep it.</p>
   <p>That is my counsel. It is not hope. I gave hope up around the time I gave up my name. Vote.</p>
-  <div class="callout cyan"><span class="label">Design note</span><p>The speech plays as an overheard Echo recording if the player reaches Tin-Zawar early. It foreshadows the exact test Awa passes in the negotiation: refusing to promise full sovereignty.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="VIII" data-part-title="Part VIII · Tales of the Sahel" data-tab="VIII · Tales" data-title="Sira's Song of the Foggara" data-chapter="Tale VII · Sira's Song of the Foggara">
   <div class="ch-head"><span class="kicker">Tale VII</span><h2 class="ch-title">Sira's Song of the Foggara</h2><p class="lede">A water-carrier's song, older than the tunnels' wiring, with new verses that only a few people know how to hear.</p></div>
@@ -4998,8 +4962,7 @@ body.readall #pages{overflow:visible}
       <p>"Go under her knee" is the mud-choked crawl channel the Lantern Children use beneath the Fork (Tale IV). "The singing is boots" warns that metal grilles carry sound from Syndicate maintenance teams. The refrain's last line was Kadia's addition, and it became a KRF password: a stranger who answers "the road was dug too" has been in the Well.</p>
     </div>
   </div>
-  <div class="callout cyan"><span class="label">Design note</span><p>In the Path of the Foggara, Sira sings each verse half a beat before the turn it names. Players who learn the song can navigate the Undercity later with the guide switched off, and the Echo Layer logs each verse as it is "walked".</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="VIII" data-part-title="Part VIII · Tales of the Sahel" data-tab="VIII · Tales" data-title="The Recitant's Doubt" data-chapter="Tale VIII · The Recitant's Doubt">
   <div class="ch-head"><span class="kicker">Tale VIII</span><h2 class="ch-title">The Recitant's Doubt</h2><p class="lede">From the private notebook of Reader Tiémoko Sall, youngest of the Conclave of Seven. Found sewn into the lining of his reading cushion.</p></div>
@@ -5230,8 +5193,7 @@ body.readall #pages{overflow:visible}
     <tr><td>Faya</td><td>FAH-yah</td><td><span class="tag purple">invented</span> faction name; not tied to any real movement</td></tr>
     <tr><td>Vey, Vohl, Teyr</td><td>VAY, VOHL, TAIR</td><td><span class="tag purple">invented</span> villain and rival surnames, chosen to sound like no real family</td></tr>
   </table></div>
-  <div class="callout cyan"><span class="label">Design note · voice</span><p>Voice actors should get this table at the first session. Mispronouncing Sankoré or Djinguereber in a game about Malian heritage will be the first thing Malian players notice. Record griot names and Tamasheq phrases with native speakers, and keep invented words stable across every language track.</p></div>
-</section>
+  </section>
 
 <section class="page" data-part="A" data-part-title="Appendices" data-tab="Appendix" data-title="Tiira Revision History" data-chapter="Appendix E · Revisions">
   <div class="ch-head"><span class="kicker">Appendix E</span><h2 class="ch-title">Tiira Revision History</h2><p class="lede">How this book grew, and what changed between versions.</p></div>
@@ -5239,7 +5201,7 @@ body.readall #pages{overflow:visible}
     <li><b>v1 · Nov 2026</b> — <b>100 pages.</b> First complete Tiira, compiled from the creator's design sessions: character design for Khalil and Awa, sector geography, faction design, the campaign storyline of <i>The Sahara Rebellion</i>, combat direction and the two teaser scripts. Established the canon bible that every later page follows.</li>
     <li><b>v2 · Nov 2026</b> — <b>About 148 pages.</b> Expanded edition. Every part grew, and one new part was added.</li>
     <li><b>v3 · Nov 2026</b> — <b>About 185 pages.</b> Two new parts at the front of the book, the Ascension chapter, new portraits and a new teaser. Dusé is redefined.</li>
-    <li><b>v4 · Nov 2026</b> — <b>208 pages.</b> All four endings told in full, Dusé as a full third hero, a PEGI 16 target, Awa's locs, new supporting-cast dossiers, a city gazetteer, four new tales and a guide to names. The cast was reviewed and several names changed.</li>
+    <li><b>v4 · Nov 2026</b> — <b>209 pages, with front and back covers.</b> All four endings told in full, Dusé as a full third hero, a PEGI 16 target, Awa's locs, new supporting-cast dossiers, a city gazetteer, four new tales and a guide to names. The cast was reviewed and several names changed.</li>
   </ul>
   <div class="tablewrap"><table class="codex">
     <tr><th>Area</th><th>What v2 adds</th></tr>
@@ -5318,16 +5280,7 @@ body.readall #pages{overflow:visible}
   <h3>Everyone below keeps their own</h3>
   <p>The erasure stops at the top. Faya's lower ranks swear a lesser oath and keep their birth names, which is why the youngest Reader is Tiémoko Sall and the keeper of the Registry is Registrar Safiatou Tangara, both ordinary Malian names. The same goes for High Recitant Bocar Diawara. On the Board of Nine only Vey and Varan carry company names; the other eight, from Hamadoun Tessougué to Sidiki Sinayogo, use the names their fathers gave them. MLI-Z's captains and elders keep their patronymics, and Ibbo ag Menna is proud to.</p>
   <div class="pull">"A man who takes a new name is telling you he has no one to answer to. Write that down next to his debts."<cite>Nana Kadia, to Awa</cite></div>
-  <div class="callout cyan"><span class="label">Design note · naming new characters</span>
-    <ul>
-      <li>Give Malian characters a real given name and a family name that fits their people: Manding jamu, Songhai, Fula, Soninke or Bozo names, or Tamasheq <i>ag</i>/<i>welet</i> patronymics.</li>
-      <li>Do not invent surnames. Invented surnames belong only to the top antagonists listed above, and each needs an in-world reason.</li>
-      <li>Never use names that point at real living public figures. Check every new name against living politicians, armed-group leaders and famous families before it is locked, and never give a historic lineage to a villain.</li>
-      <li>No two characters share a given name. Check Appendix B before naming anyone. Awa's name is unique: no Hawa.</li>
-      <li>No surname is shared across factions unless the characters are kin, and then the kinship must appear on page.</li>
-    </ul>
-  </div>
-</section>
+  </section>
 
 <section class="page" data-part="A" data-part-title="Appendices" data-tab="Appendix" data-title="Families and Houses" data-chapter="Appendix F · Names">
   <div class="ch-head"><span class="kicker">Appendix F · continued</span><h2 class="ch-title">Families and Houses</h2><p class="lede">Who is whose child, who married whom, and which bonds are blood and which are only debt.</p></div>
@@ -5378,7 +5331,26 @@ body.readall #pages{overflow:visible}
     <tr><td><b>The Circle</b> · griots</td><td>Nana Kadia; Sira, 16</td><td>Teacher and apprentice, not kin. Sira learned the Foggara's turns from her own grandmother.</td></tr>
   </table></div>
   <div class="callout"><span class="label">Lore note · debts that are not blood</span><p>Amastan ag Tidit knew Tafsit as a girl and greets her son in Tamasheq, but he is not her kin. Captain Bintou Kanta owes Amadou a debt from the Grid Famine and pays it to his family. In Timbuktu these debts are treated almost like kinship, and the Accord meter treats them the same way.</p></div>
-  <div class="callout cyan"><span class="label">Design note</span><p>Which side of the family links Inawalen to Amastan is not yet fixed. Settle it with the Tamasheq adviser before her dialogue is recorded, and keep the house of Amadou without a jamu unless the cultural panel chooses one that clashes with no surname in Appendix B.</p></div>
+  </section>
+<!-- ===== 99-back.html ===== -->
+<section class="page cover-page" data-part="Z" data-part-title="Back Cover" data-tab="Back" data-title="Back Cover" data-chapter="The Winds of Kirina">
+  <div class="cover-back">
+    <div class="cb-art" role="img" aria-label="Timbuktu at night: a figure in Ascension, eyes glowing amber, an Echo orb in the palm"></div>
+    <div class="cb-body">
+      <p class="cb-kicker">Timbuktu, 2142</p>
+      <p class="cb-blurb">For fifty years the city of manuscripts has been cut off from Mali, carved up by oligarchs who sell the light by the hour, zealots who burn the books, and separatists with a grievance of their own.</p>
+      <p class="cb-blurb">When Dr. Amadou, the scholar who kept the resistance alive, walks out of the Well of Sankoré and never comes back, his son Khalil and his niece Awa follow his trail through the Spires, the Grid and the shifting dunes of the Erg. What they find is older than the factions: a power buried at Kirina, and a choice about what kind of country deserves it.</p>
+      <div class="cb-quote">“We will tear down their towers brick by brick until Mali is whole again.”<span>Khalil</span></div>
+      <div class="cb-cast">
+        <figure><img src="../assets/khalil.jpg" alt=""><figcaption>Khalil</figcaption></figure>
+        <figure><img src="../assets/awa.jpg" alt=""><figcaption>Awa</figcaption></figure>
+        <figure><img src="../assets/duse.jpg" alt=""><figcaption>Dusé</figcaption></figure>
+        <figure><img src="../assets/amadou.jpg" alt=""><figcaption>Dr. Amadou</figcaption></figure>
+      </div>
+      <p class="cb-contents">The story bible and world book of an open-world action-RPG: the pitch, the complete story, the world and its powers, the operatives, the branching campaign and its four endings, systems of play, Harmattan Royale, art direction and the tales of the Sahel.</p>
+      <div class="cb-foot"><span class="cb-author">NJ Talsim</span><span class="cb-mark">Tiira · Volume I</span></div>
+    </div>
+  </div>
 </section>
     </div>
     <div class="foot">

@@ -1,10 +1,8 @@
-# Publish only the book. Drafts, media and source PDFs stay local.
+# Publish only the built site. Book sources (with design notes), drafts, media and private files stay local.
 /*
 !/.gitignore
 !/README.md
 !/index.html
 !/.nojekyll
-!/book/
 !/tiira/
 !/assets/
-/book/WRITERS.md

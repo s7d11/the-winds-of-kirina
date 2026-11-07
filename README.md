@@ -4,7 +4,7 @@
 
 **Read it online:** https://s7d11.github.io/the-winds-of-kirina/
 
-In the year 2142 Timbuktu stands severed from Mali, divided between corporate oligarchs, zealots and separatists. Two cousins, Khalil and Awa, go looking for a missing father and find a nation instead. This 208-page Tiira covers the world, the factions, the characters, the full branching campaign (*The Sahara Rebellion*), the game systems, the *Harmattan Royale* multiplayer mode, art direction, and in-world tales. It opens with a publisher pitch and the complete storyline told as prose.
+In the year 2142 Timbuktu stands severed from Mali, divided between corporate oligarchs, zealots and separatists. Two cousins, Khalil and Awa, go looking for a missing father and find a nation instead. This 209-page Tiira covers the world, the factions, the characters, the full branching campaign (*The Sahara Rebellion*), the game systems, the *Harmattan Royale* multiplayer mode, art direction, and in-world tales. It opens with a publisher pitch and the complete storyline told as prose.
 
 All factions, leaders, creeds and events are fictional. The world draws on the real history and culture of Mali.
 
@@ -13,24 +13,14 @@ All factions, leaders, creeds and events are fictional. The world draws on the r
 | Page | What it is |
 |---|---|
 | [`/`](https://s7d11.github.io/the-winds-of-kirina/) | Presentation page with the concept reel, characters, world and campaign |
-| [`/tiira/`](https://s7d11.github.io/the-winds-of-kirina/tiira/) | The full Tiira: 208 pages, including the pitch and the complete story (built from `book/`) |
+| [`/tiira/`](https://s7d11.github.io/the-winds-of-kirina/tiira/) | The full Tiira: 209 pages with front and back covers, including the pitch and the complete story |
 
 ## Repository layout
 
 | Path | What it is |
 |---|---|
-| `index.html` | Hand-written presentation page |
-| `assets/` | Shared stylesheet, concept reel (with audio), concept art |
-| `tiira/index.html` | The built book (do not edit by hand) |
-| `book/canon.md` | Canon bible: binding names, dates and story facts |
-| `book/parts/*.html` | Book content, one `<section class="page">` per page |
-| `book/shell.html` | Book frame, navigation, styles and interactive widgets |
-| `book/build.py` | Assembles the parts into `tiira/index.html` and checks the markup |
-
-## Building
-
-```bash
-python3 book/build.py
-```
+| `index.html` | Presentation page |
+| `assets/` | Stylesheet, concept reel and concept art |
+| `tiira/index.html` | The Tiira, web edition |
 
 © 2026 NJ Talsim. All rights reserved.
