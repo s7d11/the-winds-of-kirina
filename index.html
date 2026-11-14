@@ -67,10 +67,8 @@
     <span class="kicker">First Look</span>
     <h2 class="sec-title">The Winds Remember</h2>
     <p class="sec-lede">A first glimpse of Timbuktu in 2142, and of the people who will decide what it becomes.</p>
-    <div class="frame">
-      <video id="teaser-video" controls playsinline preload="metadata" poster="assets/teaser-poster.jpg" style="width:100%;display:block">
-        <source src="assets/kirina-teaser.mp4" type="video/mp4">
-      </video>
+    <div class="frame" style="position:relative;aspect-ratio:16/9">
+      <iframe id="teaser-video" src="https://www.youtube.com/embed/1_FWxhMj5co?rel=0&enablejsapi=1" title="The Winds of Kirina teaser" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <p class="caption">Concept footage. The final look is in development.</p>
   </div>
@@ -222,7 +220,7 @@
 
 <script>
   const tv=document.getElementById('teaser-video');
-  document.getElementById('watch').addEventListener('click',()=>{setTimeout(()=>{tv.play().catch(()=>{});},500);});
+  document.getElementById('watch').addEventListener('click',()=>{setTimeout(()=>{tv.contentWindow.postMessage(JSON.stringify({event:'command',func:'playVideo',args:''}),'*');},500);});
   const nav=document.getElementById('nav');
   const onScroll=()=>nav.classList.toggle('solid',window.scrollY>40);
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
